@@ -1,21 +1,10 @@
-while True:
-    grats_template = input('Введите шаблон поздравления, в шаблоне нужно использовать конструкцию {name} и {age}: ')
-    if '{name}' in grats_template and '{age}' in grats_template:
-        break
-    print('Ошибка: отсутствует одна или две конструкции.')
+def crypt(symbol):
+    return abc[(abc.index(symbol) + shift) % 33]
 
-names_list = input('Список людей через запятую: ').split(', ')
-ages_srt = input('Возраст людей через пробел: ')
-ages = [int(i_number) for i_number in ages_srt.split()]
+abc = 'абвгдеёжзийклмнопрстуфхцчшщъыьэюя'
+text = input('Введите шифрумое предложение: ')
+shift = int(input('Введите сдвиг: '))
 
-for i_man in range(len(names_list)):
-    print(grats_template.format(name=names_list[i_man], age=ages[i_man]))
+crypt_text = ''.join([crypt(i_sym) if i_sym != ' ' else ' ' for i_sym in text])
 
-people = [
-    ' '.join([names_list[i_man], str(ages[i_man])])
-    for i_man in range(len(names_list))
-]
-
-people_str = ', '.join(people)
-
-print('\nИменинники:', people_str)
+print(crypt_text)
