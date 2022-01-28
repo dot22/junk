@@ -1,20 +1,39 @@
-while True:
-    invitation = input('Введите шаблон адреса в формате {ip_address}: ')
-    if '{ip_address}' in invitation:
-        break
-    else:
-        print('Неправильный шаблон адреса. Повторите ввод.')
+# family_member = {
+#     "name": "Jane",
+#     "surname": "Doe",
+#     "hobbies": ["running", "sky diving", "singing"],
+#     "age": 35,
+#     "children": [
+#         {
+#             "name": "Alice",
+#             "age": 6
+#         },
+#         {
+#             "name": "Bob",
+#             "age": 8
+#         }
+#     ]
+# }
+# print(family_member)
 
+family_member = dict()
+family_member['name'] = 'Jane'
+family_member['surname'] = 'Doe'
+family_member['hobbies'] = ['running', 'sky diving', 'singing']
+family_member['age'] = 35
+family_member['children'] = [
+    {
+        'name': 'Alice',
+        'age': 6
+    },
+    {
+        'name': 'Bob',
+        'age': 8
+    }
+]
 
-def insert_num():
-    while True:
-        i_num = int(input('Введите число: '))
-        if 0 <= i_num <= 255:
-            return i_num
-        else:
-            print('Неправильный ввод. Повторите еще раз')
-
-
-ip_address = [str(insert_num()) for _ in range(4)]
-ip_address = '.'.join(ip_address)
-print(f'это адрес - {ip_address}')
+for i_children in family_member['children']:
+    if i_children.get('name', 'Noname') == 'Bob':
+        print('Есть ребенок с именем Bob')
+    print(i_children.get('name': 'Bob', 'Noname') == 'Rob':
+        print(i_children.get('name'))

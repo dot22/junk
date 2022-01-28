@@ -1,8 +1,32 @@
-details_num = 50000000
-price = 23.8589578
-increase = 0.045678
+# {
+#     'server': {
+#         'host': '127.0.0.1',
+#         'port': '10'
+#     },
+#     'configuration': {
+#         'ssh': {
+#             'access': 'true',
+#             'login': 'Ivan',
+#             'password': 'qwerty'
+#         }
+#     }
+# }
 
-print('На складе {:,d} деталей'.format(details_num))
-print('Каждая деталь стоит {:.2f} рублей'.format(price))
-print('Цена увеличилась на {:.1%}'.format(increase))
-print('На складе {:.0e} деталей'.format(details_num))
+data = dict()
+data['server'] = {
+        'host': '127.0.0.1',
+        'port': '10'
+}
+data['configuration'] = {
+        'ssh': {
+            'access': 'true',
+            'login': 'Ivan',
+            'password': 'qwerty'
+        }
+}
+
+for i_value in data.values():
+    print('i_value:', i_value)
+    for j_key in i_value:
+        print('j_key:', j_key)
+        print('i_value_j_key:', i_value[j_key])
