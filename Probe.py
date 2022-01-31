@@ -1,32 +1,16 @@
-# {
-#     'server': {
-#         'host': '127.0.0.1',
-#         'port': '10'
-#     },
-#     'configuration': {
-#         'ssh': {
-#             'access': 'true',
-#             'login': 'Ivan',
-#             'password': 'qwerty'
-#         }
-#     }
-# }
+import random
 
-data = dict()
-data['server'] = {
-        'host': '127.0.0.1',
-        'port': '10'
-}
-data['configuration'] = {
-        'ssh': {
-            'access': 'true',
-            'login': 'Ivan',
-            'password': 'qwerty'
-        }
-}
 
-for i_value in data.values():
-    print('i_value:', i_value)
-    for j_key in i_value:
-        print('j_key:', j_key)
-        print('i_value_j_key:', i_value[j_key])
+nums_1 = [29, 17, 10, 15, 13, 22, 12, 22, 7, 24, 26, 3, 11, 2, 3, 16, 19, 21, 2, 3, 8, 27, 2, 17, 2, 20, 12, 21, 3, 1]
+nums_2 = [16, 21, 30, 24, 5, 7, 23, 13, 11, 5, 21, 5, 19, 9, 12, 9, 15, 16, 29, 8, 16, 1, 22, 15, 16, 9, 1, 13, 21, 21]
+
+nums_1_set = set(nums_1)
+nums_2_set = set(nums_2)
+print('1-е множество: ', end='')
+print(nums_1_set)
+print('2-е множество: ', end='')
+print(nums_2_set)
+
+print('Минимальный элемент 1-го множества:', nums_1_set.pop())
+print('Минимальный элемент 2-го множества:', nums_2_set.pop())
+

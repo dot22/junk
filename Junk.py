@@ -1,5 +1,9 @@
-ip_address = [12, 12, 13,145]
-ip_address = [str(i) for i in ip_address]
-ip_string = '.'.join(ip_address)
-	
-print(ip_string)
+import random
+
+numbers_list = [random.randint(0,4) for _ in range(10)]
+new_list = []
+for i_num in numbers_list:
+    if i_num not in new_list:
+        new_list.append(i_num)
+print(numbers_list)
+print(new_list)
