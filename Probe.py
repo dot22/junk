@@ -1,16 +1,23 @@
-import random
+data = [
+    {'id': 10, 'user': 'Bob'},
+    {'id': 11, 'user': 'Misha'},
+    {'id': 12, 'user': 'Anton'},
+    {'id': 10, 'user': 'Bob'},
+    {'id': 11, 'user': 'Misha'}
+]
 
+unique_data = []
+for i_dict in data:
+    data_exists = False
+    for uniq_dict in unique_data:
+        if uniq_dict['id'] == i_dict['id']:
+            data_exists = True
+            break
+    if not data_exists:
+        unique_data.append(i_dict)
 
-nums_1 = [29, 17, 10, 15, 13, 22, 12, 22, 7, 24, 26, 3, 11, 2, 3, 16, 19, 21, 2, 3, 8, 27, 2, 17, 2, 20, 12, 21, 3, 1]
-nums_2 = [16, 21, 30, 24, 5, 7, 23, 13, 11, 5, 21, 5, 19, 9, 12, 9, 15, 16, 29, 8, 16, 1, 22, 15, 16, 9, 1, 13, 21, 21]
+print(unique_data, '\n')
 
-nums_1_set = set(nums_1)
-nums_2_set = set(nums_2)
-print('1-е множество: ', end='')
-print(nums_1_set)
-print('2-е множество: ', end='')
-print(nums_2_set)
+unique_data_dict = {i_dict['id']: i_dict for i_dict in data}
 
-print('Минимальный элемент 1-го множества:', nums_1_set.pop())
-print('Минимальный элемент 2-го множества:', nums_2_set.pop())
-
+print(unique_data_dict.values())
