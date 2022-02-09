@@ -1,33 +1,28 @@
-goods = {
-    'Лампа': '12345',
-    'Стол': '23456',
-    'Диван': '34567',
-    'Стул': '45678',
+original_dict = {
+    ' ': 2,
+    '-': 1,
+    'З': 1,
+    'а': 2,
+    'д': 1,
+    'е': 1,
+    'и': 1,
+    'н': 2,
+    'о': 3,
+    'п': 1,
+    'с': 2,
+    'т': 2,
+    'ч': 1,
+    'ь': 1
 }
 
-store = {
-    '12345': [
-        {'quantity': 27, 'price': 42},
-    ],
-    '23456': [
-        {'quantity': 22, 'price': 510},
-        {'quantity': 32, 'price': 520},
-    ],
-    '34567': [
-        {'quantity': 2, 'price': 1200},
-        {'quantity': 1, 'price': 1150},
-    ],
-    '45678': [
-        {'quantity': 50, 'price': 100},
-        {'quantity': 12, 'price': 95},
-        {'quantity': 43, 'price': 97},
-    ],
-}
+invert_dict = dict.fromkeys(original_dict.values())
 
-for i_goods in goods:
-    quantity = 0
-    summ = 0
-    for i_store in store.get(goods[i_goods]):
-        quantity += i_store['quantity']
-        summ += i_store['price'] * i_store['quantity']
-    print(i_goods, '-', quantity, 'шт,', 'стоимость', summ, 'руб')
+for i_key in invert_dict:
+    invert_dict[i_key] = []
+    for i_sym in original_dict:
+        if original_dict[i_sym] == i_key:
+            invert_dict[i_key].append(i_sym)
+
+print('Инвертированный словарь частот:')
+for i_num in sorted(invert_dict.keys()):
+    print(i_num, ':', invert_dict[i_num])
