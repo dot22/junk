@@ -1,23 +1,46 @@
-data = [
-    {'id': 10, 'user': 'Bob'},
-    {'id': 11, 'user': 'Misha'},
-    {'id': 12, 'user': 'Anton'},
-    {'id': 10, 'user': 'Bob'},
-    {'id': 11, 'user': 'Misha'}
-]
+goods = {
+    'Лампа': '12345',
+    'Стол': '23456',
+    'Диван': '34567',
+    'Стул': '45678',
+}
 
-unique_data = []
-for i_dict in data:
-    data_exists = False
-    for uniq_dict in unique_data:
-        if uniq_dict['id'] == i_dict['id']:
-            data_exists = True
-            break
-    if not data_exists:
-        unique_data.append(i_dict)
+store = {
+    '12345': [
+        {'quantity': 27, 'price': 42},
+    ],
+    '23456': [
+        {'quantity': 22, 'price': 510},
+        {'quantity': 32, 'price': 520},
+    ],
+    '34567': [
+        {'quantity': 2, 'price': 1200},
+        {'quantity': 1, 'price': 1150},
+    ],
+    '45678': [
+        {'quantity': 50, 'price': 100},
+        {'quantity': 12, 'price': 95},
+        {'quantity': 43, 'price': 97},
+    ],
+}
 
-print(unique_data, '\n')
+# for i_goods in goods:
+#     for i_store in store[goods.get(i_goods)]:
+#         quantity = 0
+#         summ = 0
+#         # print(i_goods, i_store)
+#         for i in i_store:
+#             print(i_store[i])
+#             print()
+#         #     quantity += i['quantity']
+#         #     summ += i['quantity'] * i['price']
+#         # print('quantity', quantity)
+#         # print('summ', summ)
 
-unique_data_dict = {i_dict['id']: i_dict for i_dict in data}
-
-print(unique_data_dict.values())
+for i_store in store:
+    quantity = 0
+    summ = 0
+    for i in store.get(i_store):
+        quantity += i['quantity']
+        summ += i['price'] * i['quantity']
+    print(i_store, quantity, summ)
