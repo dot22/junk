@@ -24,23 +24,4 @@ store = {
     ],
 }
 
-# for i_goods in goods:
-#     for i_store in store[goods.get(i_goods)]:
-#         quantity = 0
-#         summ = 0
-#         # print(i_goods, i_store)
-#         for i in i_store:
-#             print(i_store[i])
-#             print()
-#         #     quantity += i['quantity']
-#         #     summ += i['quantity'] * i['price']
-#         # print('quantity', quantity)
-#         # print('summ', summ)
-
-for i_store in store:
-    quantity = 0
-    summ = 0
-    for i in store.get(i_store):
-        quantity += i['quantity']
-        summ += i['price'] * i['quantity']
-    print(i_store, quantity, summ)
+for 
