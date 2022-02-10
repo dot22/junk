@@ -1,19 +1,28 @@
-original_dict = {
-    ' ': 2,
-    '-': 1,
-    'З': 1,
-    'а': 2,
-    'д': 1,
-    'е': 1,
-    'и': 1,
-    'н': 2,
-    'о': 3,
-    'п': 1,
-    'с': 2,
-    'т': 2,
-    'ч': 1,
-    'ь': 1
-}
+text = input('Введите текст: ')
+original_dict = {}
+
+for i_sym in text:
+    if i_sym in original_dict:
+        original_dict[i_sym] += 1
+    else:
+        original_dict[i_sym] = 1
+
+# original_dict = {
+#     ' ': 2,
+#     '-': 1,
+#     'З': 1,
+#     'а': 2,
+#     'д': 1,
+#     'е': 1,
+#     'и': 1,
+#     'н': 2,
+#     'о': 3,
+#     'п': 1,
+#     'с': 2,
+#     'т': 2,
+#     'ч': 1,
+#     'ь': 1
+# }
 
 invert_dict = dict.fromkeys(original_dict.values())
 
