@@ -1,2 +1,4 @@
-text_set = {1}
-print(*text_set)
+some_dict = {1: 4, 2: 5, 3: 6}
+
+for i in some_dict:
+    print(i)
