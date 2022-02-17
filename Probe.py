@@ -24,14 +24,10 @@ family_range[root] = count
 # print(family_values)
 
 for _ in range(number):
-# while len(family_range) != number:
-    # print('len family range - ', len(family_range))
-    # print('family_dict', family_dict)
-    for i_fam in family_dict:
-        if (family_dict.get(i_fam) in family_range) and not (i_fam in family_range):
-            print(i_fam, family_dict.get(i_fam))
-            family_range[i_fam] = count + 1
-            print(family_range[i_fam])
+    for i_fam in family_keys:
+        if family_dict.get(i_fam) in family_range and i_fam not in family_range:
+                family_range[i_fam] = count + 1
+                family_dict.pop(i_fam)
     count += 1
 
 print('family_range -', family_range)
