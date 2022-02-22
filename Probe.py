@@ -1,8 +1,11 @@
-def user_script(string):
-    user_list = [i_sym for i_num, i_sym in enumerate(string) if i_num % 2 == 0]
-    return user_list
+incomes = {
+    'apple': 5600.20,
+    'orange': 3500.45,
+    'banana': 5000.00,
+    'bergamot': 3700.56,
+    'durian': 5987.23,
+    'peach': 10000.50,
+    'pear': 1020.00,
+    'persimmon': 310.00,
+}
 
-string1 = 'О Дивный Новый мир!'
-string2 = [100, 200, 300, 'буква', 0, 2, 'a']
-print(user_script(string1))
-print(user_script(string2))
