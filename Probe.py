@@ -1,33 +1,18 @@
 import random
-import string
 
 
-def generate_random_tuple(length):
-    letters = string.ascii_lowercase
-    rand_tuple = tuple(random.choice(letters) for i in range(length))
-    rand_letter = random.choice(letters)
-    return rand_tuple, rand_letter
+original_list = [random.randint(0, 99) for x in range(10)]
+print('Оригинальный список:', original_list)
 
+# print('\nВариант 1')
+# new_list_1 = []
+# for i_index in range(0, 10, 2):
+#     list_for_add = (original_list[i_index], original_list[i_index + 1])
+#     new_list_1.append(list_for_add)
+# print(new_list_1)
 
-def generate_new_tuple(some_tuple, some_element):
-    if some_tuple.count(some_element) == 0:
-        new_tuple = ()
-    elif some_tuple.count(some_element) == 1:
-        some_element_index = some_tuple.index(some_element)
-        new_tuple = some_tuple[some_element_index:]
-    else:
-        some_element_index = some_tuple.index(some_element)
-        new_tuple = some_tuple[some_element_index:]
-        # new_tuple = some_tuple[]
-    return new_tuple
+print('\nВариант 2')
+new_list_2 = []
+for i_count, i_data in enumerate(original_list):
+    print(i_count, i_data)
 
-
-# random_tuple, random_letter = generate_random_tuple(15)
-
-## some datas for tests
-random_tuple = ('g', 'u', 'r', 'm', 's', 't', 'z', 'g', 'u', 'g', 'n', 'g', 'h', 'z', 'c')
-random_letter = 'u'
-
-print(random_tuple, random_letter)
-
-print(generate_new_tuple(random_tuple, random_letter))
