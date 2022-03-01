@@ -1,23 +1,33 @@
-def is_prime(number):
-    if number > 1:
-        for i_number in range(2, int(number / 2) + 1):
-            if (number % i_number == 0):
-                return False
-        else:
-            return True
+import random
+import string
+
+
+def generate_random_tuple(length):
+    letters = string.ascii_lowercase
+    rand_tuple = tuple(random.choice(letters) for i in range(length))
+    rand_letter = random.choice(letters)
+    return rand_tuple, rand_letter
+
+
+def generate_new_tuple(some_tuple, some_element):
+    if some_tuple.count(some_element) == 0:
+        new_tuple = ()
+    elif some_tuple.count(some_element) == 1:
+        some_element_index = some_tuple.index(some_element)
+        new_tuple = some_tuple[some_element_index:]
     else:
-        return False
+        some_element_index = some_tuple.index(some_element)
+        new_tuple = some_tuple[some_element_index:]
+        # new_tuple = some_tuple[]
+    return new_tuple
 
 
-def generate_crypt(some_text):
-    return [i_data for i_index, i_data in enumerate(some_text) if is_prime(i_index)]
+# random_tuple, random_letter = generate_random_tuple(15)
 
+## some datas for tests
+random_tuple = ('g', 'u', 'r', 'm', 's', 't', 'z', 'g', 'u', 'g', 'n', 'g', 'h', 'z', 'c')
+random_letter = 'u'
 
-text = input('Введите итерируемый объект (кортеж, список, словарь, сроку): ')
+print(random_tuple, random_letter)
 
-## datas for tests
-# text = 'О Дивный Новый мир!'
-# text = [100, 200, 300, 'буква', 0, 2, 'а']
-# text = [x for x in range(20)]
-
-print(generate_crypt(text))
+print(generate_new_tuple(random_tuple, random_letter))
