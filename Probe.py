@@ -1,19 +1,25 @@
-phone_book = {}
+# count = int(input('Сколько записей вносится в протокол? '))
+# score_dict = {}
 
-while True:
-    action = input('\nВведите действие:\n"Добавить контакт" (нажмите 0)\n\tили\n"Поиск человека по фамилии" (нажмите 1): ')
-    if action == '0':
-        person = tuple(input('Имя, Фамилия: ').split(' '))
-        if person in phone_book.keys():
-            print('Такой контакт уже есть в телефонной книге')
-        else:
-            phone_number = input('Номер телефона: ')
-            phone_book[person] = phone_number
-        print(phone_book)
-    elif action == '1':
-        search_name = input('Введите фамилию для поиска')
-        for i_name in phone_book:
-            if search_name in i_name:
-                print(i_name, phone_book[i_name])
-    else:
-        break
+## test data
+score_dict = {
+    1: ('69485', 'Jack'),
+    2: ('95715', 'qwerty'),
+    3: ('95715', 'Alex'),
+    4: ('83647', 'M'),
+    5: ('197128', 'qwerty'),
+    6: ('95715', 'Jack'),
+    7: ('93289', 'Alex'),
+    8: ('95715', 'Alex'),
+    9: ('95715', 'M')
+}
+
+# print('Записи (результат и имя):')
+#
+# for i_count in range(1, count + 1):
+#     print(i_count, 'запись: ', end='')
+#     record = tuple(input().split(' '))
+#     score_dict[i_count] = record
+
+print(score_dict)
+
