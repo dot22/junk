@@ -22,14 +22,20 @@ score_dict = {
 #     score_dict[i_count] = record
 
 print(score_dict)
-score_rank = {int(i_value[0]): i_key  for i_key, i_value in score_dict.items()}
-top_scores = sorted(score_rank)
-top_score_1 = top_scores[-1]
-top_score_2 = top_scores[-2]
-top_score_3 = top_scores[-3]
-# print(top_scores)
-print(score_rank)
-print(sorted(score_rank))
-print(top_score_1)
-print(top_score_2)
-print(top_score_3)
+# score_rates = [int(i_value[0]) for i_key, i_value in score_dict.items()]
+# score_rates = sorted([int(i_value[0]) for i_key, i_value in score_dict.items()], reverse=True)[:3]
+score_rates = sorted([int(i_value[0]) for i_key, i_value in score_dict.items()], reverse=True)
+print(score_rates)
+
+top_users = {}
+
+for i_top, i_score in enumerate(score_rates):
+    # print(i_top, i_score)
+    for i_user in score_dict:
+        if i_score == int(score_dict.get(i_user)[0]) and score_dict.get(i_user)[1] not in top_users.values():
+            # print(score_dict.get(i_user)[0], score_dict.get(i_user)[1])
+            # print(top_users.items())
+            top_users[i_top] = score_dict.pop(i_user)
+            break
+
+print(top_users)
