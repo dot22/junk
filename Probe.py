@@ -1,24 +1,21 @@
-import random
+test = input('Введите данные: ')
 
-
-def change_dict(dct):
-    num = random.randint(1, 100)
-    for i_key, i_value in dct.items():
-        if isinstance(i_value, list):
-            dct[i_key] = i_value[:] + [num]
-        if isinstance(i_value, dict):
-            dct[i_key] = i_key
-            # i_value[num] = i_key
-        if isinstance(i_value, set):
-            i_value.add(num)
-
-
-nums_list = [1, 2, 3]
-some_dict = {1: 'text', 2: 'another text'}
-uniq_nums = {1, 2, 3}
-common_dict = {1: nums_list, 2: some_dict, 3: uniq_nums, 4: (10, 20, 30)}
-change_dict(common_dict)
-print('num_list:', nums_list)
-print('some_dict', some_dict)
-print('uniq_nums', uniq_nums)
-print('common_dict', common_dict)
+if isinstance(test, str):
+    print('Тип данных: str (строка)')
+    print('Неизменяемый (immutable)')
+elif isinstance(test, list):
+    print('Тип данных: list (список)')
+    print('Изменяемый (mutable)')
+elif isinstance(test, dict):
+    print('Тип данных: dict (словарь)')
+    print('Изменяемый (mutable)')
+elif isinstance(test, set):
+    print('Тип данных: set (множество)')
+    print('Изменяемый (mutable)')
+elif isinstance(test, bool):
+    print('Тип данных: Bool (логический)')
+    print('Неизменяемый (immutable)')
+else: # isinstance(test, tuple):
+    print('Тип данных: tuple (кортеж)')
+    print('Неизменяемый (immutable)')
+print('ID объекта:', id(test))
