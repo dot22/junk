@@ -1,43 +1,19 @@
-def search_key(dbase, key, deep):
-    if deep != 0:
-        if key in dbase:
-            return dbase[key]
-
-        for sub_base in dbase.values():
-            if isinstance(sub_base, dict):
-                deep -= 1
-                result = search_key(sub_base, key, deep)
-                if result:
-                    break
-        else:
-            result = None
-    else:
-        print('Достигнута максимальная глубина')
-        result = None
-
-    return result
-
-
 site = {
     'html': {
         'head': {
-            'title': 'Мой сайт'
+            'title': 'Куплю/продам телефон недорого'
         },
         'body': {
-            'h2': 'Здесь будет мой заголовок',
-            'div': 'Тут, наверное, какой-то блок',
-            'p': 'А вот здесь новый абзац'
+            'h2': 'У нас самая низкая цена на iphone',
+            'div': 'Купить',
+            'p': 'продать'
         }
     }
 }
 
-user_key = input('Какой ключ ищем? ')
+copy_sites = int(input('Сколько будет сайтов: '))
+for _ in range(copy_sites):
+    name_site = input('Введите название продукта для нового сайта: ')
+    print('Сайт для', name_site, ':')
+    print(site)
 
-user_deep = int(input('На какую глубину искать (по-умолчанию - без ограничения)? ') or '-1')
-
-value = search_key(site, user_key, user_deep)
-
-if value:
-    print(value)
-else:
-    print('Такого ключа в структуре базы нет')
