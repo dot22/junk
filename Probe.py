@@ -5,16 +5,15 @@ def search_key(dbase, key, deep):
 
         for sub_base in dbase.values():
             if isinstance(sub_base, dict):
-                result = search_key(sub_base, key, deep)
                 deep -= 1
-                print(deep)
+                result = search_key(sub_base, key, deep)
                 if result:
                     break
         else:
             result = None
     else:
         print('Достигнута максимальная глубина')
-        return
+        result = None
 
     return result
 
