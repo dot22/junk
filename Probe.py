@@ -17,3 +17,4 @@ for _ in range(copy_sites):
     print('Сайт для', name_site, ':')
     print(site)
 
+
