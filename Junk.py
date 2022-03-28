@@ -1,18 +1,22 @@
 def print_tree(some_dict, tab_level=0):
+    comma_level = len(some_dict) - 1
     for i_key, i_value in some_dict.items():
-        # tab_level = 0
+        tab_level += 1
         if not isinstance(some_dict[i_key], dict):
-            tab_level += 1
-            print(tab_level * "\t", "'", i_key, "': '", i_value, "'", sep='')
-            tab_level -= 1
+            if comma_level > 0:
+                print(tab_level * "\t", "'", i_key, "': '", i_value, "',", sep='')
+            else:
+                print(tab_level * "\t", "'", i_key, "': '", i_value, "'", sep='')
         else:
-            tab_level += 1
             print(tab_level * "\t", "'", i_key, "': {", sep='')
-            sub_tree = some_dict[i_key]
-            print_tree(sub_tree, tab_level)
-            print("}")
-            tab_level -= 1
-
+            some_tree = some_dict[i_key]
+            print_tree(some_tree, tab_level)
+            if comma_level > 0:
+                print(tab_level * "\t", "},")
+            else:
+                print(tab_level * "\t", "}")
+        tab_level -= 1
+        comma_level -= 1
 
 site = {
     'html': {
@@ -22,7 +26,7 @@ site = {
         'body': {
             'h2': 'У нас самая низкая цена на iphone',
             'div': 'Купить',
-            'p': 'продать'
+            'p': 'Продать'
         }
     }
 }

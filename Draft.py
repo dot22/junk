@@ -1,10 +1,29 @@
-def matryoshka(n):
-    if n == 1:
-        print('Матрешечка')
-    else:
-        print('Верх матрешки n=', n)
-        matryoshka(n - 1)
-        print('Низ матрешки n=', n)
+def print_tree(some_dict, tab_level=0):
+    for i_key, i_value in some_dict.items():
+        if not isinstance(some_dict[i_key], dict):
+            tab_level += 1
+            print(tab_level * "\t", "'", i_key, "': '", i_value, "'", sep='')
+            tab_level -= 1
+        else:
+            tab_level += 1
+            print(tab_level * "\t", "'", i_key, "': {", sep='')
+            sub_tree = some_dict[i_key]
+            print_tree(sub_tree, tab_level)
+            print(tab_level * "\t", "}")
+            tab_level -= 1
 
 
-matryoshka(5)
+site = {
+    'html': {
+        'head': {
+            'title': 'Куплю/продам телефон недорого'
+        },
+        'body': {
+            'h2': 'У нас самая низкая цена на iphone',
+            'div': 'Купить',
+            'p': 'продать'
+        }
+    }
+}
+
+print_tree(site)
