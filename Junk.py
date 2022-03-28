@@ -1,23 +1,17 @@
-# def matryoshka(n):
-#     if n == 1:
-#         print('Матрешечка')
-#     else:
-#         print('Верх матрешки n=', n)
-#         matryoshka(n - 1)
-#         print('Низ матрешки n=', n)
-#
-# matryoshka(5)
-
-def print_tree(some_dict, level=1):
+def print_tree(some_dict, tab_level=0):
     for i_key, i_value in some_dict.items():
-        if isinstance(some_dict[i_key], dict):
-            print(i_key)
-            sub_tree = some_dict[i_key]
-            print_tree(sub_tree, level)
-            level += 1
-            print(level)
+        # tab_level = 0
+        if not isinstance(some_dict[i_key], dict):
+            tab_level += 1
+            print(tab_level * "\t", "'", i_key, "': '", i_value, "'", sep='')
+            tab_level -= 1
         else:
-            print(i_key, i_value)
+            tab_level += 1
+            print(tab_level * "\t", "'", i_key, "': {", sep='')
+            sub_tree = some_dict[i_key]
+            print_tree(sub_tree, tab_level)
+            print("}")
+            tab_level -= 1
 
 
 site = {
@@ -34,4 +28,3 @@ site = {
 }
 
 print_tree(site)
-
