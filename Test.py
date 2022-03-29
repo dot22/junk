@@ -1,12 +1,7 @@
-def range_num(num):
-    if num == 0:
-        return 0
-    print(initial_num - num)
-    return range_num(num - 1)
+def Fib(n):
+    if n <= 1:
+        return n
+    else:
+        return Fib(n - 1) + Fib(n - 2)
 
-
-
-
-number = int(input('Введите число: '))
-print('Вывод всех чисел от 1 до', number)
-range_num(number)
+print(Fib(10))

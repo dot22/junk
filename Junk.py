@@ -18,20 +18,14 @@ def print_tree(some_dict, tab_level=0):
         tab_level -= 1
         comma_level -= 1
 
-# site = {
-#     'html': {
-#         'head': {
-#             'title': 'Куплю/продам телефон недорого'
-#         },
-#         'body': {
-#             'h2': 'У нас самая низкая цена на iphone',
-#             'div': 'Купить',
-#             'p': 'Продать'
-#         }
-#     }
-# }
 
-# print_tree(site)
+def title_value(site_name):
+    return "Куплю/продам " + site_name + " недорого"
+
+
+def h2_value(site_name):
+    return "У нас самая низкая цена на " + site_name
+
 
 amount_site = int(input('Сколько сайтов: '))
 list_sites = []
@@ -45,13 +39,16 @@ for i_count in range(amount_site):
         site = {
             'html': {
                 'head': {
-                    'title': 'Куплю/продам телефон недорого'
+                    'title': title_value(i_name)
                 },
                 'body': {
-                    'h2': 'У нас самая низкая цена на телефон',
+                    'h2': h2_value(i_name),
                     'div': 'Купить',
                     'p': 'Продать'
                 }
             }
         }
+        print('site = {')
         print_tree(site)
+        print('}')
+    print()
