@@ -1,15 +1,14 @@
 import os
 
-def find_file(path,file):
-    if os.path.exists(os.path.join(path, file)):
-        print(os.path.join(path, file))
 
-    if os.path.isdir(os.path.join(path, file)):
-        sub_dir = os.path.join(path, file)
-        find_file(sub_dir, file)
+folder_name = 'project'
+file_name = 'my_file.txt'
 
-# abs_path = 'd:\yandex\git'
-abs_path = 'd:\yandex\git\junk.w'
-file_name = 'Junk.py'
+path = 'docs/{folder}/{file}'.format(
+    folder=folder_name,
+    file=file_name
+)
 
-find_file(abs_path, file_name)
+print(path)
+
+rel_path = os.path.join('docs', folder_name, file_name)
