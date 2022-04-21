@@ -1,18 +1,14 @@
-import os
+def find_file(cur_path, file_name):
+    if key in struct:
+        return struct[key]
 
-
-def print_dirs(project):
-    print('\nСодержимое директории', project)
-    if os.path.exists(project):
-        for i_elem in os.listdir(project):
-            path = os.path.join(project, i_elem)
-            print('    ', path)
+    for sub_struct in struct(values):
+        if isinstance(sub_struct, dict):
+            result = find_key(sub_struct, key)
+            if result:
+                break
     else:
-        print('Каталога проекта не существует')
+        result = None
 
-
-projects_list = ['junk.h', 'junk.w', 'Prod']
-for i_project in projects_list:
-    path_to_project = os.path.abspath(os.path.join('..', i_project))
-    print_dirs(path_to_project)
-
+    return result
+            l
