@@ -1,25 +1,21 @@
-import os
+file_1 = open('/home/dot/Trash/task/group_1.txt', 'r')
+summa = 0
+for i_line in file_1:
+    info = i_line.split()
+    summa += int(info[2])
 
+file_1 = open('/home/dot/Trash/task/group_1.txt', 'r')
+diff = 0
+for i_line in file_1:
+    info = i_line.split()
+    diff -= int(info[2])
 
-def read_file(path, file):
-    for i_elem in os.listdir(path):
-        if i_elem == file:
+file_2 = open('/home/dot/Trash/task/Additional_info/group_2.txt', 'r')
+compose = 1
+for i_line in file_2:
+    info = i_line.split()
+    compose *= int(info[2])
 
-
-    if os.path.exists(os.path.join(path, file)):
-        print(os.path.join(path, file))
-        file_read = open(os.path.join(path, file), 'r')
-        data = file_read.read()
-        print(data)
-        return file_read.close()
-        # return print(data)
-    for i_list in os.listdir(path):
-        if os.path.isdir(os.path.join(path, i_list)):
-            sub_path = os.path.join(path, i_list)
-            read_file(sub_path, file)
-
-
-path_search = '/home/dot/Yandex/Obsidian'
-file_search = 'Template.md'
-
-read_file(path_search, file_search)
+print(summa)
+print(diff)
+print(compose)
