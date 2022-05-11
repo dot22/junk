@@ -1,19 +1,30 @@
 import os
 
+def find_file(cur_path, file_name):
+    print('переходим ', cur_path)
 
-def find_file(path, file):
-    if os.path.exists(os.path.join(path, file)):
-                print(os.path.join(path, file))
+    for i_elem in os.listdir(cur_path):
+        path = os.path.join(cur_path, i_elem)
+        print('    смотрим', path)
 
-    for i_elem in os.listdir(path):
-        if os.path.isdir(os.path.join(path, i_elem)):
-            sub_path = os.path.join(path, i_elem)
-            find_file(sub_path, file)
-            # print(i_elem)
+        if file_name == i_elem:
+            return path
+        elif os.path.isdir(path):
+            print('Это директория')
+            result = find_file(path, file_name)
+            if result:
+                break
+    else:
+        result = None
+
+    return result
 
 
-path_search = '/home/dot/Yandex/Obsidian'
-file_search = 'Template.md'
-
-test_file = find_file(path_search, file_search)
-print(test_file)
+file_path = find_file(os.path.abspath(os.path.join('..', '..', 'Obsidian')), 'TODO.md')
+history_file = open('search_history.txt', 'a')
+if file_path:
+    print('Абсолютный путь к файлу:', file_path)
+    history_file.write(file_path)
+    history_file.close()
+else:
+    print('Файл не найден')
