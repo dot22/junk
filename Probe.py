@@ -1,15 +1,17 @@
-import os
-
+numbers_file = open('numbers.txt', 'r')
+answer_file = open('answer.txt', 'w')
+summ = 0
 
 try:
-    ages = open('ages.txt', 'r')
-    result = open('result.txt', 'x')
-    for i_line in ages:
-        age_round = round(i_line, 2)
-        result.write(age_round)
-except FileExistsError:
-    print('Файл с таким именем уже существует')
-except IsADirectoryError:
-    print('Под указанным имненем существует каталог, но не файл')
-except TypeError:
-    print('Некорректный тип данных или некорретное значение')
+    for i_line in numbers_file:
+        i_line = i_line.split()
+        for i_sym in i_line:
+            if i_sym.isdigit():
+                summ += int(i_sym)
+
+    answer_file.write(str(summ))
+finally:
+    numbers_file.close()
+    print('number_file закрыт корректно')
+    answer_file.close()
+    print('answer_file закрыт корректно')
