@@ -1,5 +1,24 @@
-open_file = open('numbers.txt', 'r')
-summ = 0
+names_list = []
 
-for i_line in open_file:
-    print(i_line)
+while True:
+    try:
+        name = input('Введите имя: ')
+        if name.lower() == 'error':
+            raise BaseException('Неправильный ввод')
+        if not name.isalpha():
+            raise TypeError
+        names_list.append(name)
+        if len(names_list) == 5:
+            print('Место закончилось')
+            break
+    except TypeError:
+        print('Wrong Input')
+    except BaseException:
+        names_list = []
+        print('Введено стоп-слово')
+        raise ValueError('Пожалуйста, не вводите стоп-слово')
+
+names_file = open('names.txt', 'w')
+names_file.write('\n'.join(names_list))
+names_file.close()
+print('Программа закончена, запись завершена')
