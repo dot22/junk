@@ -4,7 +4,7 @@ while True:
     try:
         name = input('Введите имя: ')
         if name.lower() == 'error':
-            raise BaseException('Неправильный ввод')
+            raise BaseException('Программа сломана')
         if not name.isalpha():
             raise TypeError
         names_list.append(name)
@@ -12,7 +12,7 @@ while True:
             print('Место закончилось')
             break
     except TypeError:
-        print('Wrong Input')
+        print('Неправильный ввод')
     except BaseException:
         names_list = []
         print('Введено стоп-слово')
@@ -21,4 +21,4 @@ while True:
 names_file = open('names.txt', 'w')
 names_file.write('\n'.join(names_list))
 names_file.close()
-print('Программа закончена, запись завершена')
+print('Программа закончена. Запись завершена')
