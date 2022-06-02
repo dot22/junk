@@ -1,6 +1,26 @@
 import random
 
 
+sym_sum = 0
+line_count = 0
+
+try:
+    with open('people.txt', 'r') as peoples_file:
+        for i_line in peoples_file:
+            line_count += 1
+            length = len(i_line)
+            if i_line.endswith('\n'):
+                length -= 1
+            if length < 3:
+                raise BaseException('Длина {} строки меньше трех символов'.format(line_count))
+            sym_sum += length
+
+except BaseException:
+    print('Test')
+finally:
+    print(sym_sum)
+
+
 def x_divide_y(x, y):
     try:
         x += random.randint(0, 10)
