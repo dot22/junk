@@ -18,8 +18,13 @@ def func(line):
         elif op not in op_list:
             raise ArithmeticError
         else:
-            cmd = r'print({} {} {})'.format(first_operand, op, second_operand)
-
+            cmd = 'print({} {} {})'.format(first_operand, op, second_operand)
+            print(cmd)
+            eval(cmd)
+            # print(exec(cmd))
+    except (TypeError, ArichmeticError):
+        print('fin')
+    return eval(cmd)
 
 summ = 0
 
@@ -28,6 +33,7 @@ with open('calc.txt', 'r') as calc:
         if i_string.endswith('\n'):
             i_string = i_string[:-1]
         result_of_string = func(i_string)
-        # summ += result_of_string
+        print(result_of_string)
+        summ += result_of_string
 
 print('Сумма результатов:', summ)
