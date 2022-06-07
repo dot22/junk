@@ -1,19 +1,16 @@
-class Toyota:
-    color = 'red'
-    price = 1000000
-    max_speed = 200
-    current_speed = 0
+class Employee:
 
-    def info(self):
-        print('Color: {}\nPrice: {}\nMax speed: {}\nCurrent speed: {}\n'.format(
-            self.color, self.price, self.max_speed, self.current_speed
-        ))
+    def __init__(self, name, salary):
+        self.name = name
+        self.salary = salary
 
-    def set_speed(self, speed):
-        self.current_speed = speed
+    def print_info(self):
+        print(
+            'Name: {} \nSalary: {}'.format(self.name, self.salary)
+        )
 
 
-car_1 = Toyota()
-car_1.info()
-car_1.set_speed(190)
-print(car_1.current_speed)
+emp_1 = Employee('Tom', 10000)
+emp_2 = Employee('Bob', 20000)
+emp_1.print_info()
+emp_2.print_info()
