@@ -1,5 +1,5 @@
 class Potato:
-    states = {0: 'Отсутствует', 1: 'Росток', 2: 'Зеленая', 3: 'Зрелая'}
+    states = {0: 'Отсутствуе', 1: 'Росток', 2: 'Зеленая', 3: 'Созрела'}
 
     def __init__(self, index):
         self.index = index
@@ -16,13 +16,23 @@ class Potato:
             print('Вся картошка созрела. Можно собирать!')
 
 
-class PotatoGarden:
+# class PotatoGarden:
 
-    def __init__(self, count):
-        self.potatoes = [Potato(index) for index in range(1, count + 1)]
+
+potato_1 = Potato(1)
+potato_1.info()
+potato_1.grow()
+potato_1.info()
 
     def info(self):
 
+    def info(self):
+        print('Картошка {} сейчас {}'.format(self.index, self.state))
+
+    def grow(self):
+        if self.state < 3:
+            self.state += 1
+        print('Картошка {} на стадии {}'.format(self.index, states[self.state]))
 
 
 
