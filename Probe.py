@@ -1,46 +1,30 @@
 class Potato:
-    states = {0: 'Отсутствуе', 1: 'Росток', 2: 'Зеленая', 3: 'Созрела'}
+    states: {0: 'Отсутствует', 1: 'Росток', 2: 'Зеленая', 3: 'Зрелая'}
 
     def __init__(self, index):
         self.index = index
         self.state = 0
 
-    def info(self):
-        print('Статус картошки {} - {}'.format(self.index, self.state))
-
-    def ruse(self):
-        if self.state < 3:
-            self.state += 1
-            print('Картошка {} сейчас {}'.format(self.index, Potato.states[self.state]))
-        else:
-            print('Вся картошка созрела. Можно собирать!')
-
-
-# class PotatoGarden:
-
-
-potato_1 = Potato(1)
-potato_1.info()
-potato_1.grow()
-potato_1.info()
-
-    def info(self):
-
-    def info(self):
-        print('Картошка {} сейчас {}'.format(self.index, self.state))
+    def print_state(self):
+        print('Картошка {} в стадии {}'.format(
+            self.index, self.state
+        ))
 
     def grow(self):
         if self.state < 3:
             self.state += 1
-        print('Картошка {} на стадии {}'.format(self.index, states[self.state]))
 
 
+class PotatoGarden:
 
+    def __init__(self, count):
+        self.potatos = [Potato(index) for index in range(1, count + 1)]
 
-# potato_1 = Potato(1)
-# potato_1.info()
-# for _ in range(4):
-#     potato_1.ruse()
+    def grow_all(self):
+        for i_potato in self.potatos:
+            i_potato.grow()
+            print(i_potato.state)
+
 
 my_garden = PotatoGarden(5)
-print(PotatoGarden)
+my_garden.grow_all()
