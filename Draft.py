@@ -27,22 +27,16 @@ class PotatoGarden:
         self.potatos = [Potato(index) for index in range(1, count + 1)]
 
     def grow_all(self):
-        print('Картошка прорастает!')
+        print('Картошка прорастает')
         for i_potato in self.potatos:
             i_potato.grow()
 
     def are_all_ripe(self):
-        for i_potato in self.potatos:
-            if not i_potato.is_ripe():
-                print('Картошка еще не созрела\n')
-                break
+        if all([i_potato.is_ripe for i_potato in self.potatos]):
+            print('Картошка еще не созрела\n')
         else:
-            print('Вся картошка созрела. Можно собирать ')
+            print('Вся картошка созрела. Можно собирать\n')
 
 
 my_garden = PotatoGarden(5)
-
-# my_garden.are_all_ripe()
-# for _ in range(3):
-#     my_garden.grow_all()
-#     my_garden.are_all_ripe()
+my_garden.are_all_ripe()
