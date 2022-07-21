@@ -1,5 +1,5 @@
 class Potato:
-    states = {0: 'Отсутствует', 1: 'Росток', 2: 'Зеленая', 3: 'Зрелая'}
+    states = {0: 'None', 1: 'Early', 2: 'Green', 3: 'Good'}
 
     def __init__(self, index):
         self.index = index
@@ -16,9 +16,7 @@ class Potato:
         return False
 
     def print_state(self):
-        print('Картошка {} сейчас {}'.format(
-            self.index, Potato.states[self.state]
-        ))
+        print('Potato {} now is {}'.format(self.index, Potato.states[self.state]))
 
 
 class PotatoGarden:
@@ -27,16 +25,19 @@ class PotatoGarden:
         self.potatos = [Potato(index) for index in range(1, count + 1)]
 
     def grow_all(self):
-        print('Картошка прорастает')
+        print('Potato is growing')
         for i_potato in self.potatos:
             i_potato.grow()
 
     def are_all_ripe(self):
-        if all([i_potato.is_ripe for i_potato in self.potatos]):
-            print('Картошка еще не созрела\n')
+        if not all([i_potato.is_ripe() for i_potato in self.potatos]):
+            print('Potato is not ripe yet\n')
         else:
-            print('Вся картошка созрела. Можно собирать\n')
+            print('All potatos are ripe. We can take them\n ')
 
 
 my_garden = PotatoGarden(5)
 my_garden.are_all_ripe()
+for _ in range(3):
+    my_garden.grow_all()
+    # my_garden.are_all_ripe()
