@@ -1,1 +1,1 @@
-m = 'message@mail.com'
+m = 'mail@mail.com'
