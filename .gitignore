@@ -34,5 +34,3 @@
 #.idea
 #.git
 .*
-logs/*.log
-!logs/sample.log
