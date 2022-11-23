@@ -1,6 +1,10 @@
-number = int(input('Введите четырехзначное число: '))
-a = number % 10
-b = (number % 100) // 10
-c = (number // 100) % 10
-d = (number // 1000)
-print(a * 1000 + b * 100 + c * 10 + d)
+a = int(input('Введите первое число: '))
+b = int(input('Введите второе число: '))
+
+print(a, b)
+
+a = a + b
+b = a - b
+a = a - b
+
+print(a, b)
