@@ -1,9 +1,5 @@
-name = 'Иван'
-my_color = 'Зелёный'
-sport = 'Бег'
-print('Меня зовут')
-print(name)
-print('Мой любимый цвет:')
-print(my_color)
-print('Мой любимый вид спорта:')
-print(sport)
+a = input('Введите первое слово: ')
+b = input('Введите второе слово: ')
+print(a, b)
+a, b = b, a
+print(a, b)
