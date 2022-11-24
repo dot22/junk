@@ -1,7 +1,5 @@
-first = int(input('Первый товар: '))
-second = int(input('Второй товар: '))
-third = int(input('Третий товар: '))
-summ = first + second + third
-if summ > 10000:
-    summ -= summ * 10 / 100
-print('Итоговая сумма =', summ)
+summ = int(input('Введите сумму, которую хотите снять: '))
+if summ % 100 != 0:
+    print('Такую сумму снять невозможно. Обратитесь в другой банкомат.')
+else:
+    print('Вот ваши деньги')
