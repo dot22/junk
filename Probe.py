@@ -1,10 +1,13 @@
-work_time = int(input('Введите отработанные часы: '))
-credit = int(input('Введите остаток по кредиту: '))
-food = int(input('Введите траты на еду: '))
+a = int(input('Введите первое число: '))
+b = int(input('Введите второе число: '))
+c = int(input('Введите третье число: '))
 
-sellary = (200 * work_time) / (2 ** 3) + work_time
+maxn = a
 
-if sellary >= credit + food:
-    print('Часов хватает. Можете отдохнуть')
-else:
-    print('Часов не хватает. Придется работать')
+if maxn < b:
+    maxn = b
+
+if maxn < c:
+    maxn = c
+
+print(maxn)
