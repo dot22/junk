@@ -1,7 +1,7 @@
-son = int(input('Какое число загадано? '))
-father = 8
-if son != father:
-    print('Не угадал')
-else:
-    print('Угадал')
-print('Хорошего дня')
+first = int(input('Первый товар: '))
+second = int(input('Второй товар: '))
+third = int(input('Третий товар: '))
+summ = first + second + third
+if summ > 10000:
+    summ -= summ * 10 / 100
+print('Итоговая сумма =', summ)
