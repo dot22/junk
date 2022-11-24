@@ -1,10 +1,5 @@
-a = int(input('Введите первое число: '))
-b = int(input('Введите второе число: '))
-
-print(a, b)
-
-a = a + b
-b = a - b
-a = a - b
-
-print(a, b)
+son = int(input('Какое число загадано: '))
+father = 7
+if son != father:
+    print('Не угадал')
+print('Конец игры')
