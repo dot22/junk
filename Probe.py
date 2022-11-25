@@ -1,11 +1,6 @@
-range = int(input('Range of the student: '))
+num = int(input('Enter the number: '))
 
-if range <= 10:
-    grade = int(input('Grade of the student: '))
-    print('Congratulation! You are a student now!')
-    if grade >= 290:
-        print('You will have a scholarship!')
-    else:
-        print("But you won't have a scholarship")
+if (-9 > num >= -99) or (9 < num <= 99):
+    print('Double')
 else:
-    print('Unfortunately, you loose')
+    print('No double')
