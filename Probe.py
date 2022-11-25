@@ -1,10 +1,7 @@
-num1 = int(input('N1: '))
-num2 = int(input('N2: '))
-num3 = int(input('N3: '))
+cost = int(input('Enter the cost: '))
+size = int(input('Enter the size: '))
 
-if num1 == num2 == num3:
-    print('3')
-elif num1 == num2 or num1 == num3 or num2 == num3:
-    print('2')
+if (cost <= 10 and size >= 100) or (cost <= 7 and size >= 80):
+    print('Good')
 else:
-    print(0)
+    print('Bad')
