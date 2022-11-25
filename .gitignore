@@ -28,7 +28,7 @@
 
 *.iml
 modules.xml
-*/misc.xml
+*/.idea/misc.xml
 *.ipr
 .idea/workspace.xml
 .idea
