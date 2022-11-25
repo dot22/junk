@@ -1,10 +1,11 @@
-num1 = int(input('Enter number one: '))
-num2 = int(input('Enter number two: '))
-num3 = int(input('Enter number three: '))
+range = int(input('Range of the student: '))
 
-if num1 > num2 and num1 > num3:
-    print('max -', num1)
-elif num2 > num1 and num2 > num3:
-    print('max -', num2)
+if range <= 10:
+    grade = int(input('Grade of the student: '))
+    print('Congratulation! You are a student now!')
+    if grade >= 290:
+        print('You will have a scholarship!')
+    else:
+        print("But you won't have a scholarship")
 else:
-    print('max -', num3)
+    print('Unfortunately, you loose')
