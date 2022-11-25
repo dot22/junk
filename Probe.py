@@ -1,10 +1,5 @@
-x = int(input('X: '))
-y = int(input('Y: '))
-z = int(input('Z: '))
-
-if x < y:
-    print('X')
-elif x > y:
-    print('Y')
+temperature = int(input('Введите температуру: '))
+if temperature < 0 or temperature > 100:
+    print('Alarm')
 else:
-    print('Z')
+    print('Good condition')
