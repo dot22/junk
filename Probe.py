@@ -1,9 +1,11 @@
-number = int(input('Enter the number: '))
-summ = 0
+amount = int(input('How much do you have: '))
 
-while number > 0:
-    if number % 10 == 5:
+while amount < 10000:
+    dice = int(input('Enter the dice: '))
+    if dice == 3:
+        print('You are loose all')
+        amount = 0
         break
-    summ += number % 10
-    number //= 10
-print(summ)
+    print('You up 500')
+    amount += 500
+print(amount)
