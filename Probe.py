@@ -1,14 +1,10 @@
-level1 = 1000
-level2 = 2500
-level3 = 5000
+num1 = int(input('Enter number one: '))
+num2 = int(input('Enter number two: '))
+num3 = int(input('Enter number three: '))
 
-count = int(input('Введите количество опыта: '))
-
-if count > level3:
-    print('Ваш уровень: 3')
-elif count > level2:
-    print('Ваш уровень:', 2)
-elif count > level1:
-    print('Ваш уровень: 1')
-elif count < level1:
-    print('Ваш уровень: 0')
+if num1 > num2 and num1 > num3:
+    print('max -', num1)
+elif num2 > num1 and num2 > num3:
+    print('max -', num2)
+else:
+    print('max -', num3)
