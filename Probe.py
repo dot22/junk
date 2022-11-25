@@ -1,10 +1,9 @@
-temperature = int(input('Temperature: '))
-distance = 0
+number = int(input('Enter the number: '))
+summ = 0
 
-while temperature > 15:
-    distance += 20
-    temperature -= 2
-    if temperature <= 15:
+while number > 0:
+    if number % 10 == 5:
         break
-    distance += 10
-print('Distance =', distance)
+    summ += number % 10
+    number //= 10
+print(summ)
