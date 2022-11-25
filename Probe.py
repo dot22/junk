@@ -1,7 +1,6 @@
-cost = int(input('Enter the cost: '))
-size = int(input('Enter the size: '))
+time = int(input('Enter the time: '))
 
-if (cost <= 10 and size >= 100) or (cost <= 7 and size >= 80):
-    print('Good')
+if (8 <= time < 22) and ((time != 14) or (10 <= time < 12) or (18 <= time < 20)):
+    print('Good time')
 else:
-    print('Bad')
+    print('Bad time')
