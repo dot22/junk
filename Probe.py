@@ -1,11 +1,7 @@
-amount = int(input('How much do you have: '))
-
-while amount < 10000:
-    dice = int(input('Enter the dice: '))
-    if dice == 3:
-        print('You are loose all')
-        amount = 0
-        break
-    print('You up 500')
-    amount += 500
-print(amount)
+count = 0
+while count <= 10:
+    if count == 0:
+        print('Время вышло!')
+ else:
+   print(count)
+   count -= 1
