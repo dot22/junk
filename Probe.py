@@ -1,8 +1,6 @@
-count = 10
-while count <= 10:
-    if count == 0:
-        print('Время вышло!')
+while True:
+    question = int(input('Продолжаем работать? 1/0: '))
+    if question == 0:
+        print('Приложение закрывается...')
         break
-    else:
-        print(count)
-        count -= 1
+print('Работа завершена')
