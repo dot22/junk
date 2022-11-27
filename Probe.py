@@ -1,6 +1,8 @@
+password = 5555
+
 while True:
-    question = int(input('Продолжаем работать? 1/0: '))
-    if question == 0:
-        print('Приложение закрывается...')
+    print('Компьютер заблокирован. Вернёшь скейт — скажу код разблокировки!')
+    question = int(input('Введите код: '))
+    if question == password:
+        print('Код верный, завершаю работу...')
         break
-print('Работа завершена')
