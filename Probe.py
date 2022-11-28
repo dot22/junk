@@ -14,5 +14,5 @@ while count <= work_time:
         wife_call = True
 
 print('Work time ended. Tasks done -', tasks)
-if wife_call == True:
+if wife_call:
     print('Make shopping')
