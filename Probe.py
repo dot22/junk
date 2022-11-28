@@ -1,10 +1,13 @@
-number = int(input('Enter the number: '))
+count_positive = 0
+count_negative = 0
+while True:
+    number = int(input('Enter the number: '))
+    if number > 0:
+        count_positive += 1
+    elif number < 0:
+        count_negative += 1
+    else:
+        break
 
-number1 = number // 1000
-number2 = number % 1000
-sum1 = number1 % 10 + number1 // 10 % 10 + number1 // 100
-sum2 = number2 % 10 + number2 // 10 % 10 + number2 // 100
-if sum1 == sum2:
-    print('Good Luck!')
-else:
-    print('You loose')
+print('Positive -', count_positive)
+print('Negative -', count_negative)
