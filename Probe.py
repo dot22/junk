@@ -1,13 +1,18 @@
-count_positive = 0
-count_negative = 0
-while True:
-    number = int(input('Enter the number: '))
-    if number > 0:
-        count_positive += 1
-    elif number < 0:
-        count_negative += 1
-    else:
-        break
+work_time = 8
+count = 1
+tasks = 0
+wife_call = False
+print('Начался 8-часовой рабочий день')
 
-print('Positive -', count_positive)
-print('Negative -', count_negative)
+while count <= work_time:
+    print(count, '-й час', sep='')
+    count += 1
+    jobs_assigned = int(input('How many jobs assigned: '))
+    tasks += jobs_assigned
+    wife_calling = int(input('Wife is calling. Answer the phone? 0/1 '))
+    if wife_calling == 1:
+        wife_call = True
+
+print('Work time ended. Tasks done -', tasks)
+if wife_call == True:
+    print('Make shopping')
