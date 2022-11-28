@@ -1,12 +1,7 @@
-name = input('Name: ')
-credit = int(input('Credit: '))
+number = int(input('Enter the number: '))
+count = 0
 
-print(name, 'your credit is', credit, 'roubles.')
-
-while True:
-    ask = int(input('How much can you pay? '))
-    if ask >= credit:
-        break
-    else:
-        print('Маловато, Василий. Давайте ещё раз.')
-print('Отлично,', name, '! Вы погасили долг. Спасибо!')
+while number > 0:
+    number //= 10
+    count += 1
+print(count)
