@@ -1,7 +1,8 @@
-number = int(input('Enter the number: '))
 count = 0
-
-while number > 0:
-    number //= 10
-    count += 1
+while True:
+    sequence = int(input('Enter next seq: '))
+    if sequence == 0:
+        break
+    elif (sequence % 2) == 0:
+        count += 1
 print(count)
