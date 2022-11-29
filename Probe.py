@@ -1,5 +1,2 @@
-for meters in 100,90,95,87,102:
-    if meters % 3 == 0:
-        print(meters, 'Подходит')
-    else:
-        print(meters, 'Не подходит')
+for i in 3, 7, 5, 6, 4:
+    print(i ** 2, i ** 3, i ** 4)
