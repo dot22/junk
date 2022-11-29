@@ -1,2 +1,6 @@
-for i in 3, 7, 5, 6, 4:
-    print(i ** 2, i ** 3, i ** 4)
+winners = 0
+for number in 345, 19, 87, 1020, 421:
+    if (99 < number < 1000) and number % 5 == 0:
+        print('win number -', number)
+        winners += 1
+print('Winners -', winners)
