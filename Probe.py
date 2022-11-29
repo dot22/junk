@@ -1,2 +1,2 @@
-for i in range(21):
-    print(2 ** i)
+for i in range(11):
+    print(i ** 3)
