@@ -1,2 +1,3 @@
-for i in range(11):
-    print(i ** 2)
+hour = int(input('What time is it now? '))
+for i in range(hour):
+    print('Ku-ku')
