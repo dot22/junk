@@ -1,4 +1,3 @@
-number = int(input('Enter the Number: '))
-
-for i in range(1, number // 2 + 2):
-    print((i * 2) - 1, '** 2 =', ((i * 2) - 1) ** 2)
+number = int(input('Enter the number: '))
+for i in range(1, number + 1, 2):
+    print(i ** 3)
