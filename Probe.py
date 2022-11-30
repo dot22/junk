@@ -1,4 +1,8 @@
-number = int(input('Enter the number: '))
+total_hours = int(input('Enter total hours: '))
+cell = 1
 
-for i in range(1, number // 2 + 1):
-    print(i * 2, '** 3 =', (i * 2) ** 3)
+for hour in range(1, total_hours // 3 + 1):
+    cell *= 2
+    print('Прошло:', hour * 3, 'hours')
+    print('Клеток:', cell)
+    print('До конца эксперимента:', total_hours - hour * 3)
