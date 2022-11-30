@@ -1,11 +1,8 @@
-count = 0
+number = int(input('Enter the number: '))
+factorial = 1
 
-for i in range(30, 36):
-    print('Людей в секторе', i, end='')
-    puple = int(input(': '))
-    if puple <= 10:
-        print('Всё спокойно')
-    else:
-        print('Нарушение!')
-        count += 1
-print('Нарушений -', count)
+for i in range(1, number + 1):
+    factorial *= i
+    print(i, factorial)
+
+print('Факториал от', number, 'равен', factorial)
