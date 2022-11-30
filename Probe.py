@@ -1,14 +1,14 @@
-min_sal = 0
-flag = True
+number = int(input('Enter the number: '))
+sum_numbers = 0
+cur_numbers = 0
 
-for i in range(10):
-    cur_sal = int(input('Current salary: '))
-    if cur_sal < min_sal:
-        flag = False
-    else:
-        min_sal = cur_sal
+for i in range(1, number + 1):
+    sum_numbers += i
 
-if flag:
-    print('Good salary')
-else:
-    print('Bad salary')
+for j in range(number - 1):
+    cur = int(input('Enter current number: '))
+    cur_numbers += cur
+
+print('Missed_card =', sum_numbers - cur_numbers)
+
+
