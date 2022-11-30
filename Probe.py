@@ -1,6 +1,8 @@
-numbers = 114, 12, 14, 10605, 4907, 450
-for i in numbers:
-    if i % 2 == 0 and i % 3 != 0:
-        print(i, '- Good')
-    else:
-        print(i, ' - Bad')
+count = 0
+
+for i in range(10):
+    number = int(input('Enter the number: '))
+    if number > 0 and number % 2 == 0:
+        print(number, '- Good')
+        count += 1
+print(count, 'goods')
