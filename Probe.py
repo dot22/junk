@@ -1,11 +1,6 @@
-a = int(input('A: '))
-b = int(input('B: '))
-summ = 0
-count = 0
-
-for i in range(a, b + 1):
-    if i % 3 == 0:
-        count += 1
-        summ += i
-
-print('Answer:', summ / count)
+for i in range(10, 100):
+    n10 = i // 10
+    n1 = i % 10
+    s = 3 * (n1 * n10)
+    if i == s:
+        print(i)
