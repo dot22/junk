@@ -1,7 +1,9 @@
-start = int(input('Start: '))
-finish = int(input('Finish: '))
-step = int(input('Step: '))
+a = int(input('Enter the size: '))
+count = 0
+envelop = 12 * 12
 
-for x in range(finish, start -1, step):
-    y = x ** 3 + 2 * x ** 2 - 4 * x + 1
-    print(y)
+while a ** 2 > envelop:
+    count += 1
+    a = a / 2
+
+print(count)
