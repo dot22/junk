@@ -1,12 +1,7 @@
-start_num = int(input('Enter the start number: '))
-finish_num = int(input('Enter the finish num: '))
-div = int(input('Enter the divider: '))
-summ = 0
-count = 0
+start = int(input('Start: '))
+finish = int(input('Finish: '))
+step = int(input('Step: '))
 
-for i in range(start_num, finish_num + 1):
-    if i % div == 0:
-        count += 1
-        summ += i
-
-print('Result:', summ / count)
+for x in range(finish, start -1, step):
+    y = x ** 3 + 2 * x ** 2 - 4 * x + 1
+    print(y)
