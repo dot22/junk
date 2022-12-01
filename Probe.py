@@ -1,4 +1,5 @@
-sec = int(input('How many secs: '))
-
-for i in range(sec - sec % 2, 0, -2):
-    print(i)
+food = 100
+montn = 0
+for i in range(food - 4, -1, -4):
+    montn += 1
+    print('через', montn, 'месяц останется', i, 'кг гречки')
