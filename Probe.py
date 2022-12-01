@@ -1,9 +1,10 @@
-creditors = int(input('How many creditors: '))
-summ = 0
+sec = int(input('How many secs: '))
 
-for i in range(0, creditors, 5):
-    print('Creditor number', i)
-    credit = int(input('How much do you loan: '))
-    summ += credit
+for i in range(sec, -1, -1):
+    print('Now is', i, 'sec')
+    ask = int(input('Do you want to stop? 0 or 1: '))
+    if ask == 1:
+        print('Timer was stopped at', i, 'sec')
+        break
 
-print(summ)
+print('Warning! It is hot!')
