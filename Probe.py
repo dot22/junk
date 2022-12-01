@@ -1,10 +1,12 @@
-sec = int(input('How many secs: '))
+start_num = int(input('Enter the start number: '))
+finish_num = int(input('Enter the finish num: '))
+div = int(input('Enter the divider: '))
+summ = 0
+count = 0
 
-for i in range(sec, -1, -1):
-    print('Now is', i, 'sec')
-    ask = int(input('Do you want to stop? 0 or 1: '))
-    if ask == 1:
-        print('Timer was stopped at', i, 'sec')
-        break
+for i in range(start_num, finish_num + 1):
+    if i % div == 0:
+        count += 1
+        summ += i
 
-print('Warning! It is hot!')
+print('Result:', summ / count)
