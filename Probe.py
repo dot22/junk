@@ -1,6 +1,4 @@
-name = input('What is your name? ')
+text = input('Enter the text: ')
 
-print(name, 'купи слона')
-while True:
-    answer = input('')
-    print('Все говорят', answer, ',а ты купи слона')
+for i in text:
+    print(3 * i)
