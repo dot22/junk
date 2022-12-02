@@ -1,9 +1,9 @@
-girls = int(input('How many girls? '))
-boys = int(input('How many boys? '))
+count = 0
+for i in range(5):
+    ask = input('Кто написал Онегина? ')
+    if ask == 'Пушкин' or ask == 'пушкин':
+        break
+    print('Wrong answer.')
+    count += 1
 
-if (girls > 2 * boys) or (boys > 2 * girls):
-    print('Решения нет')
-elif girls >= boys:
-    print((girls - boys) * 'GBG' + (boys - (girls - boys)) * 'BG')
-else:
-    print((boys - girls) * 'BGB' + (girls - (boys - girls)) * 'GB')
+print('Bad boys:', count)
