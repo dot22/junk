@@ -1,9 +1,5 @@
-count = 0
-for i in range(5):
-    ask = input('Кто написал Онегина? ')
-    if ask == 'Пушкин' or ask == 'пушкин':
+while True:
+    question = input('Have job done? ')
+    if question == 'Yes, of course':
         break
-    print('Wrong answer.')
-    count += 1
-
-print('Bad boys:', count)
+print('Good job')
