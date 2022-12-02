@@ -1,6 +1,8 @@
-number = int(input('Enter the number: '))
-summ = 0
-
-for i in range(number):
-    summ += ((-1) ** i) / (2 ** i)
-print(summ)
+x = int(input('X: '))
+res = 1
+for i in range(1, 65):
+    if i % 2 != 0:
+        res *= (x - i)
+    else:
+        res /= (x - i)
+print(res)
