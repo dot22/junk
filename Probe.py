@@ -1,10 +1,13 @@
-string = input('Enter the string: ')
+string = 'shacnidw'
+word1 = ''
+word2 = ''
 position = 0
-milk = 0
 
-for i in string:
+for letter in string:
     position += 1
-    if i == 'b':
-        milk += position * 2
+    if position % 2 == 1:
+        word1 = word1 + letter
+    else:
+        word2 = letter + word2
 
-print(milk)
+print(word1 + word2)
