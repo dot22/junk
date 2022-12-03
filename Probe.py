@@ -1,8 +1,9 @@
-summ = 0
+string = input('Enter the string: ')
+position = 0
 
-for i in range(10):
-    word = input('Enter the word: ')
-    if word == 'Карамба':
-        summ += 1
+for letter in string:
+    position += 1
+    if letter == '*':
+        break
 
-print('Sum =', summ)
+print('Position number', position)
