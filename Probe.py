@@ -1,14 +1,13 @@
 string = input('Enter the string: ')
-summ = 0
-summ_max = 0
+word = 0
+word_max = 0
 
 for letter in string:
-    if summ_max < summ:
-        summ_max = summ
-    if letter == 's':
-        summ += 1
+    if word_max < word:
+        word_max = word
+    if letter != ' ':
+        word += 1
     else:
-        summ = 0
+        word = 0
 
-print(summ_max)
-
+print(word_max)
