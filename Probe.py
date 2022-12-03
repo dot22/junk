@@ -1,13 +1,6 @@
-string = input('Enter the string: ')
-word = 0
-word_max = 0
+lenght = int(input('How long lenght: '))
+sigh = int(input('How many signs: '))
 
-for letter in string:
-    if word_max < word:
-        word_max = word
-    if letter != ' ':
-        word += 1
-    else:
-        word = 0
+half_lengs = (lenght - sigh) // 2
 
-print(word_max)
+print(half_lengs * '~' + sigh * '!' + half_lengs * '~')
