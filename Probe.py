@@ -1,9 +1,6 @@
-string = input('Enter the string: ')
-position = 0
+rows = int(input('Enter number of rows: '))
+seats = int(input('Enter number of seats: '))
+space = int(input('Free space in meters: '))
 
-for letter in string:
-    position += 1
-    if letter == '*':
-        break
-
-print('Position number', position)
+for i in range(rows):
+    print('=' * seats + '*' * space + '=' * seats)
