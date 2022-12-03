@@ -1,12 +1,5 @@
-text = input('Enter the text: ')
-count_big = 0
-count_small = 0
+number = int(input('Enter the number: '))
 
-for i in text:
-    if i == 'Ы':
-        count_big += 1
-    elif i == 'ы':
-        count_small += 1
-
-print('Big:', count_big)
-print('Small:', count_small)
+for i in range(number // 10 + 1):
+    print( '-=-' + str(i * 10), end='')
+print('-=-')
