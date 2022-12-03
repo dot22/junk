@@ -1,6 +1,10 @@
-lenght = int(input('How long lenght: '))
-sigh = int(input('How many signs: '))
+string = input('Enter the string: ')
+position = 0
+milk = 0
 
-half_lengs = (lenght - sigh) // 2
+for i in string:
+    position += 1
+    if i == 'b':
+        milk += position * 2
 
-print(half_lengs * '~' + sigh * '!' + half_lengs * '~')
+print(milk)
