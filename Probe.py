@@ -1,5 +1,9 @@
-number = int(input('Enter the number: '))
+week = 'понедельник', 'вторник', 'среда', 'четверг', 'пятница', 'суббота', 'воскресенье'
+day = 0
 
-for i in range(number // 10 + 1):
-    print( '-=-' + str(i * 10), end='')
-print('-=-')
+question = input('Введите день недели: ')
+
+for i in week:
+    day += 1
+    if question == i:
+        print(day)
