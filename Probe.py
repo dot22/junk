@@ -1,9 +1,8 @@
-week = 'понедельник', 'вторник', 'среда', 'четверг', 'пятница', 'суббота', 'воскресенье'
-day = 0
+summ = 0
 
-question = input('Введите день недели: ')
+for i in range(10):
+    word = input('Enter the word: ')
+    if word == 'Карамба':
+        summ += 1
 
-for i in week:
-    day += 1
-    if question == i:
-        print(day)
+print('Sum =', summ)
