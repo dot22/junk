@@ -1,11 +1,8 @@
-size = int(input('Enter the size: '))
+people = int(input('How many people: '))
 
-for row in range(size):
-    for col in range(size):
-        if col == size - row - 1:
-            print('1', end='')
-        elif col < size - row - 1:
-            print('0', end='')
-        else:
-            print('2', end='')
+for hour in range(people):
+    print('Now hour is:', hour)
+    for order in range(hour, people):
+        print('Now order is: ', order)
     print()
+print('Order finished!')
