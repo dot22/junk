@@ -1,11 +1,7 @@
-seq_numbers = int(input('How many numbers: '))
-amount = 0
+number = int(input('Enter the number: '))
 
-for order in range(seq_numbers):
-    number = input('Enter next number: ')
-    for numeral in number:
-        # print(numeral)
-        if int(numeral) > 5:
-            amount += 1
-
-print('Amount numerals:', amount)
+for row in range(number + 1):
+    for col in range(row, number + 1):
+        if row <= col:
+            print(col, end=' ')
+    print()
