@@ -1,8 +1,11 @@
-people = int(input('How many people: '))
+seq_numbers = int(input('How many numbers: '))
+amount = 0
 
-for hour in range(people):
-    print('Now hour is:', hour)
-    for order in range(hour, people):
-        print('Now order is: ', order)
-    print()
-print('Order finished!')
+for order in range(seq_numbers):
+    number = input('Enter next number: ')
+    for numeral in number:
+        # print(numeral)
+        if int(numeral) > 5:
+            amount += 1
+
+print('Amount numerals:', amount)
