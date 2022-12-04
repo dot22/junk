@@ -1,6 +1,6 @@
-number = int(input('Enter the number: '))
+number = 10
 
-for row in range(number + 1):
-    for col in range(number + 1):
-        print(row + col, end='\t')
+for row in range(number):
+    for col in range(number):
+        print(row - col, end='\t')
     print()
