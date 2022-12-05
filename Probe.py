@@ -1,4 +1,9 @@
-size = int(input('Enter the size of the piramid: '))
+size = int(input('Enter the size: '))
+count = 1
 
-for i in range(size):
-    print((size - i - 1) * ' ' + (i * 2 + 1) * '*')
+for row in range(1, size + 1):
+    print((size - row) * '_', end='')
+    for col in range(row):
+        print(count, end=' ')
+        count += 2
+    print()
