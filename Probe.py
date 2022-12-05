@@ -1,14 +1,9 @@
-numbers = int(input('Enter the number: '))
-count = 0
+number = int(input('Enter the number: '))
+summ = 0
 
-for number in range(numbers):
-    simple = False
-    numeral = int(input('Enter numeral: '))
-    for divisor in range(2, numeral):
-        if numeral % divisor == 0:
-            simple = True
-    if simple == False:
-        count += 1
+for i in range(1, number + 1):
+    for j in range(1, i):
+        i *= j
+    summ += i
 
-
-print(count)
+print(summ)
