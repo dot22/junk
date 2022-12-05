@@ -1,12 +1,11 @@
-x = int(input('Enter X size: '))
-y = int(input('Enter Y size: '))
+size = 11
 
-for row in range(y):
-    for col in range(x):
-        if col == 0 or col == x - 1:
-            print('|', end='')
-        elif row == 0 or row == y - 1:
-            print('-', end='')
+for row in range(size):
+    for col in range(size + 1):
+        if row == col:
+            print('^', end='')
+        elif row == size - col:
+            print('^', end='')
         else:
             print(' ', end='')
     print()
