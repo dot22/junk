@@ -1,9 +1,12 @@
-size = int(input('Enter the size: '))
-count = 1
+# size = int(input('Enter size: '))
+size = 6
 
-for row in range(1, size + 1):
-    print((size - row) * '_', end='')
-    for col in range(row):
-        print(count, end=' ')
-        count += 2
+for row in range(size):
+    for col in range(size * 2):
+        if col <= row:
+            print(size - col, end='')
+        elif col >= size * 2 - row - 1:
+            print(col - size + 1, end='')
+        else:
+            print(' ', end='')
     print()
