@@ -1,13 +1,7 @@
-height = float(input('Heigh: '))
-weight = float(input('Weigh: '))
+chatles = int(input('How many chatles: '))
 
-bmi = round(weight / height ** 2, 2)
-print(bmi)
-if bmi < 18.5:
-    print('Not enough')
-elif bmi < 25:
-    print('Good')
-elif bmi < 30:
-    print('Much')
-else:
-    print('Too much')
+credit = chatles / 2200
+print('This is', credit, 'CR')
+
+ships = int(credit * 2)
+print('This is', ships, 'ships')
