@@ -1,7 +1,20 @@
-chatles = int(input('How many chatles: '))
+x = float(input('X: '))
 
-credit = chatles / 2200
-print('This is', credit, 'CR')
+while True:
+    if x < 0 or x > 1:
+        print('X wrong. Try another time:')
+        x = float(input('X: '))
+    else:
+        break
 
-ships = int(credit * 2)
-print('This is', ships, 'ships')
+
+y = float(input('Y: '))
+
+while True:
+    if y < 0 or y > 1:
+        print('Y wrong. Try another time')
+        y = float(input('Y: '))
+    else:
+        break
+
+print('Your coordinates:', int(x * 10), int(y * 10))
