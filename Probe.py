@@ -1,5 +1,4 @@
-stage = int(input('What is your stage: '))
-koef = float(input('Koef? '))
+age = int(input('Age: '))
+temperature = float(input('Temperature: '))
 
-win = round(stage * koef, 2)
-print(win)
+print('Present: ', age * temperature)
