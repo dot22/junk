@@ -1,12 +1,11 @@
 import math
 
 
-a = float(input('a: '))
-b = float(input('b: '))
-c = float(input('c: '))
+distance = float(input('Distance: '))
+angle = float(input('Angle: '))
+angle /= 57.2958
 
-p = (a + b + c) / 2
+x = math.cos(angle) * distance
+y = math.sin(angle) * distance
 
-s = math.sqrt(p * (p - a) * (p - b) * (p - c))
-
-print('S =', s)
+print(x, y)
