@@ -1,8 +1,13 @@
-euro = float(input('Enter the sum in euro: '))
+import math
 
-dollar = euro * 1.25
-print(dollar, euro)
-rouble = dollar * 60.87
-print(dollar, rouble)
 
-print(rouble)
+sequence = int(input('Enter sequence: '))
+
+for i in range(sequence):
+    x = float(input('Enter X: '))
+    if x > 0:
+        x = math.ceil(x)
+        print('x = ', x, ', log(x) =', math.log(x))
+    else:
+        x = math.floor(x)
+        print('x =', x, ', exp(x) =', math.exp(x))
