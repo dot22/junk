@@ -1,13 +1,17 @@
 import math
 
 
-sequence = int(input('Enter sequence: '))
+size = int(input('Enter file size: '))
+speed = int(input('Enter connection speed: '))
+count = 0
+approximate_size = 0
 
-for i in range(sequence):
-    x = float(input('Enter X: '))
-    if x > 0:
-        x = math.ceil(x)
-        print('x = ', x, ', log(x) =', math.log(x))
+while approximate_size < size:
+    count += 1
+    if approximate_size + speed < size:
+        approximate_size += speed
     else:
-        x = math.floor(x)
-        print('x =', x, ', exp(x) =', math.exp(x))
+        approximate_size = size
+    percent_size = math.ceil(approximate_size / size * 100)
+    print('Прошло ', count, ' сек. Скачано ', approximate_size, ' из ', size, ' Мб (', percent_size, '%)', sep='')
+
