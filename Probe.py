@@ -1,11 +1,14 @@
 import math
 
 
-distance = float(input('Distance: '))
-angle = float(input('Angle: '))
-angle /= 57.2958
+x = 1.75
 
-x = math.cos(angle) * distance
-y = math.sin(angle) * distance
-
-print(x, y)
+print(math.floor(x))
+print(math.ceil(x))
+print(abs(x))
+print(math.exp(x))
+print(math.log(x))
+print(math.log2(x))
+print(math.log10(x))
+print(math.sin(x))
+print(math.cos(x))
