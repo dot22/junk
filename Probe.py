@@ -1,13 +1,13 @@
-import math
+# bottom_c = int(input('Нижняя граница: '))
+bottom_c = 0
+# top_c = int(input('Верхняя граница: '))
+top_c = 50
+# step = int(input('Шаг: '))
+step = 20
 
-radius = float(input('Radius of the planet: '))
-earth_volume = 10.8321e11
+print('\nВывод')
+print('C\tF')
 
-planet_volume = 4 / 3 * math.pi * radius ** 3
-
-if planet_volume < earth_volume:
-    print('Объём планеты Земля больше в', round(earth_volume / planet_volume, 3), 'раз')
-else:
-    inverse_coefficient = round(earth_volume / planet_volume, 3)
-    coefficient = round(planet_volume / earth_volume, 3)
-    print('Объём планеты Земля меньше в (1/', inverse_coefficient, ') = ', coefficient, 'раз', sep='')
+for t_c in range(bottom_c, top_c, step):
+    t_f = int(32 + t_c * 1.8)
+    print(t_c, t_f, sep='\t')
