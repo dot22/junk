@@ -1,13 +1,22 @@
 import math
 
+a = float(input('A: '))
+b = float(input('B: '))
+c = float(input('C: '))
 
-h_angle = float(input('Angle of hour: '))
+d = (b ** 2) - (4 * a * c)
 
-h_hour = h_angle // 30
+print('D =', d)
 
-print('Hour is:', int(h_hour))
-
-m_angle = h_angle % 30 * 12
-
-
-print(m_angle)
+if d < 0:
+    print('No way')
+elif d == 0:
+    x = (-1 * b) / (2 * a)
+    print('X =', x)
+else:
+    x1 = (-1 * b + math.sqrt(d)) / (2 * a)
+    x2 = (-1 * b - math.sqrt(d)) / (2 * a)
+    if x1 < x2:
+        print(x1, x2)
+    else:
+        print(x2, x1)
