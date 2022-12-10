@@ -1,14 +1,8 @@
-def calculateFood():
-    a = int(input())
-    b = int(input())
-    print("Всего", a + b, "шт.")
+def price(number):
+    print('Цена:', number)
 
-
-print("Сколько мешков рыбы и мяса?")
-calculateFood()
-
-print("Сколько буханок белого и чёрного хлеба?")
-calculateFood()
-
-print("Сколько вёдер воды и молока?")
-calculateFood()
+for i in range(3):
+    print('Название: КлирВотер')
+    print('Производитель: ВодЗавод')
+    cost = int(input('Введите цену: '))
+    price(cost)
