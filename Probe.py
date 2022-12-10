@@ -1,11 +1,10 @@
-a = int(input('A: '))
-b = int(input('B: '))
+def greeting():
+    print('Привет!')
+    print('Добро пожаловать!')
 
-c = a + b
-d = a - b
 
-min = (c - abs(d)) / 2
-max = min + abs(d)
-
-print(min, max)
-
+while True:
+    a = input('Зайдёте? Да/Нет: ')
+    if a == 'Да':
+        greeting()
+    print('Следующий.\n')
