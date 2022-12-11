@@ -1,7 +1,10 @@
-def middlesumm(a, b):
-    print((a + b) / 2)
+def address(surname, name, country, city, street, house, flat):
+    print('Фамилия: ', surname)
+    print('Имя: ', name)
+    print('Страна: ', country)
+    print('Город', city)
+    print('Улица: ', street)
+    print('Номер дома: ', house)
+    print('Номер квартиры: ', flat)
 
-
-a = int(input('Введите левую границу: '))
-b = int(input('Введите правую границу: '))
-middlesumm(a, b)
+address('Ibanov', 'Ivan', 'Russia', 'Piter', 'Kozlova', '12', 52)
