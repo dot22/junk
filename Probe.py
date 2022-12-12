@@ -1,24 +1,10 @@
-import math
+def summa_n(number):
+    summ = 0
+    for i in range(1, number + 1):
+        summ += i
+    print('Summ is', summ)
 
 
-def distance(x, y):
-    print('Дистанция:', math.sqrt(x ** 2 + y ** 2))
 
-
-def lenght(x1, x2, y1, y2):
-    print('Длина отрезка:', math.sqrt((x1 - x2) ** 2 + (y1 - y2) ** 2))
-
-
-choise = int(input('Что выбрать 1 или 2'))
-if choise == 1:
-    x = int(input('X: '))
-    y = int(input('Y: '))
-    distance(x, y)
-elif choise == 2:
-    x1 = int(input('X1: '))
-    y1 = int(input('Y1: '))
-    x2 = int(input('X2: '))
-    y2 = int(input('Y2: '))
-    lenght(x1, x2, y1, y2)
-else:
-    print('Wrong number')
+digital = int(input('Enter the digital: '))
+summa_n(digital)
