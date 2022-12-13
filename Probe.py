@@ -1,17 +1,16 @@
-def reverse_number(num):
-    reverse = 0
-    degree = 0
-    while num > 0:
-        reverse = reverse * 10 + num % 10
-        num //= 10
-        degree += 1
-    print(reverse)
+def count_letters(some_text):
+    count_num = 0
+    count_let = 0
+    number = input('What number: ')
+    letter = input('What letter: ')
+    for i in some_text:
+        if i == number:
+            count_num += 1
+        elif i == letter:
+            count_let += 1
+    print('Number', number, 'is:', count_num)
+    print('Letter', letter, 'is', count_let)
 
 
-while True:
-    number = int(input('Enter the number: '))
-    if number != 0:
-        reverse_number(number)
-    else:
-        print('Program is closed')
-        break
+text = input('Enter some text: ')
+count_letters(text)
