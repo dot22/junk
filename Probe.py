@@ -1,12 +1,14 @@
-def summ_n(dig):
-    summ = 0
-    for i in range(1, dig + 1):
-        summ += i
-    return summ
+def gcd(first, second):
+    while first != 0 and second != 0:
+        if first > second:
+            first, second = second, first % second
+        else:
+            second, first = first, second % first
+
+    return first + second
 
 
-number = int(input('Enter the number: '))
-new_number = summ_n(number)
-print('summ from 1 til', number, '=', new_number)
-another_number = summ_n(new_number)
-print('summ from 1 til', new_number, '=', another_number)
+first_number = int(input('Enter first number: '))
+second_number = int(input('Enter second number: '))
+result = gcd(first_number, second_number)
+print('НОД =', result)
