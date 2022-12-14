@@ -1,9 +1,8 @@
-x = 1
-n = float(input('Enter the number): '))
+number = float(input('Enter the number: '))
 count = 0
 
-while x < 2:
-    x += n
+while number > 10:
     count += 1
+    number /= 10
 
-print(count)
+print(number, count)
