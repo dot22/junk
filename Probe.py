@@ -1,8 +1,9 @@
-number = float(input('Enter the number: '))
-count = 0
+budget = float(input('Enter the budget: '))
+tax = float(input('Enter the tax: '))
 
-while number > 10:
-    count += 1
-    number /= 10
-
-print(number, count)
+if (budget + tax) - budget < 1e-16:
+    print('Budget grows')
+else:
+    print('The same')
+print(budget, tax)
+print(budget)
