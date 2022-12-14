@@ -1,9 +1,16 @@
-def eqv(a, b, c):
-    if a + b - c > 1e-16:
-        print('True')
-    else:
-        print('False')
-    print(a + b, c)
+number = float(input('Enter the number: '))
 
-eqv(1.1, 2.2, 3.3)
-eqv(1e-14, 1e-14, 3e-14)
+order = 0
+
+if number < 0:
+    print('Wrong number')
+elif number < 1:
+    while number < 1:
+        order -= 1
+        number = number * 10
+elif number >= 10:
+    while number >= 10:
+        number /= 10
+        order += 1
+
+print(round(number, abs(order)), order)
