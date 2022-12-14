@@ -1,9 +1,9 @@
-budget = float(input('Enter the budget: '))
-tax = float(input('Enter the tax: '))
+def eqv(a, b, c):
+    if a + b - c > 1e-16:
+        print('True')
+    else:
+        print('False')
+    print(a + b, c)
 
-if (budget + tax) - budget < 1e-16:
-    print('Budget grows')
-else:
-    print('The same')
-print(budget, tax)
-print(budget)
+eqv(1.1, 2.2, 3.3)
+eqv(1e-14, 1e-14, 3e-14)
