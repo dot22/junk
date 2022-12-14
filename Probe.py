@@ -1,14 +1,14 @@
-def gcd(first, second):
-    while first != 0 and second != 0:
-        if first > second:
-            first, second = second, first % second
-        else:
-            second, first = first, second % first
+def first(tasks):
+    result = 0
+    for i in range(tasks):
+        number = int(input('Enter the number: '))
+        if number < 0:
+            number = 0
+        if number > result:
+            result = number
+    return result
 
-    return first + second
 
-
-first_number = int(input('Enter first number: '))
-second_number = int(input('Enter second number: '))
-result = gcd(first_number, second_number)
-print('НОД =', result)
+number_of_tasks = int(input('How many tasks will be: '))
+first_task = first(number_of_tasks)
+print('The first task is', first_task)
