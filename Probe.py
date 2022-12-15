@@ -1,13 +1,17 @@
-def max_two(num1, num2):
-    if num1 > num2:
-        return num1
-    else:
-        return num2
+def num_reverse(num):
+    reverse = ''
+    for i in str(num):
+        reverse = i + reverse
+
+    return int(reverse)
 
 
-a = int(input('Enter A: '))
-b = int(input('Enter B: '))
-c = int(input('Enter C: '))
+num1 = int(input('Enter Number 1: '))
+num2 = int(input('Enter Number 2: '))
 
-d = max_two(a, b)
-print(max_two(c, d))
+num1_reverse = num_reverse(num1)
+num2_reverse = num_reverse(num2)
+
+sum_num = num1_reverse + num2_reverse
+print(num_reverse(sum_num))
+
