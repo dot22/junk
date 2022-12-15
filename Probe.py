@@ -1,16 +1,13 @@
-number = float(input('Enter the number: '))
+def max_two(num1, num2):
+    if num1 > num2:
+        return num1
+    else:
+        return num2
 
-order = 0
 
-if number < 0:
-    print('Wrong number')
-elif number < 1:
-    while number < 1:
-        order -= 1
-        number = number * 10
-elif number >= 10:
-    while number >= 10:
-        number /= 10
-        order += 1
+a = int(input('Enter A: '))
+b = int(input('Enter B: '))
+c = int(input('Enter C: '))
 
-print(round(number, abs(order)), order)
+d = max_two(a, b)
+print(max_two(c, d))
