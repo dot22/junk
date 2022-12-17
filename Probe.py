@@ -1,12 +1,16 @@
-def count_range(start,stop):
-    count = 0
-    while start - stop > 1e-15:
-        count += 1
-        start -= start * 8.4 / 100
-    print(count)
+def resque(depth):
+    result = depth ** 3 - 3 * depth ** 2 - 12 * depth + 10
+    return result
 
 
-starting_point = float(input('Starting point: '))
-stop_point = float(input('Stop point: '))
-
-count_range(starting_point, stop_point)
+resque_level = 0.01
+min_depth = 0
+max_depth = 4
+middle_depth = (min_depth + max_depth) / 2
+while abs(resque(middle_depth)) - resque_level > 1e-15:
+    if resque(middle_depth) < resque_level:
+        max_depth = middle_depth
+    else:
+        min_depth = middle_depth
+    middle_depth = (min_depth + max_depth) / 2
+print(middle_depth)
