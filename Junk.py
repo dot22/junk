@@ -29,20 +29,3 @@ def row_member(x, n):
 i = 0
 x_dig = 5
 precision = 0.001
-
-while True:
-    test_result = row_member(x_dig, i)
-    if abs(test_result + row_member(x_dig, i + 1) - test_result) > precision:
-        print()
-        print('i =', i)
-        # degree(i)
-        # degree2x(5, i)
-        # factor2n(i)
-        test_result += row_member(x_dig, i + 1)
-        i += 1
-        print(test_result)
-        print()
-    else:
-        print(test_result)
-        break
-
