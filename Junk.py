@@ -29,3 +29,13 @@ def row_member(x, n):
 i = 0
 x_dig = 5
 precision = 0.001
+
+cur_member = row_member(x_dig, i)
+print(cur_member)
+
+next_member = row_member(x_dig, i + 1)
+print(next_member)
+while abs(cur_member + next_member) - abs(cur_member) > precision:
+    cur_member += next_member
+    next_member = row_member(x_dig, i + 1)
+    i += 1
