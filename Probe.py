@@ -22,20 +22,18 @@ def factor2n(n):
     return result
 
 
-# def row_member(x, n):
-#     result = 1
-#     result *= degree(n) * degree2x(x, n) / factor2n(n)
-#     return result
+def row_member(x, n):
+    result = degree(n) * degree2x(x, n) / factor2n(n)
+    return result
+
 
 def summ(x):
-    n = 0
-    current_row_member = degree(n) * degree2x(x, n) / factor2n(n)
-    next_row_member = degree(n + 1) * degree2x(x, n + 1) / factor2n(n + 1)
-    while abs(current_row_member + next_row_member) - abs(next_row_member) > 0.001:
-        current_row_member += next_row_member
-        next_row_member = degree(n + 1) * degree2x(x, n + 1) / factor2n(n + 1)
-        n += 1
-    print(current_row_member)
+    test_result = row_member(x, 0)
+    for i in range(1000):
+        while row_member(x, i) > 0.2835:
+            test_result += row_member(x, i)
+            print('row member =', row_member(x, i))
+            print(test_result)
 
 
 precision = 0.001
