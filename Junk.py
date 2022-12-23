@@ -22,6 +22,7 @@ def factor2n(n):
     return result
 
 
+
 def row_member(x, n):
     result = degree(n) * degree2x(x, n) / factor2n(n)
     # print('result =', result)
