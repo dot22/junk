@@ -1,46 +1,40 @@
-def degree(n):
-    result = 1
-    for j in range(n):
-        result *= -1
-    # print('degree =', result)
-    return result
+def sign(order):
+    sign = 1
+    for i in range(order):
+        sign *= -1
+    return sign
 
 
-def degree2x(x, n):
-    result = 1
-    for j in range(2 * n):
-        result *= x
-    # print('degree2x =', result)
-    return result
+def degree(number, order):
+    degree = 1
+    for i in range(order * 2):
+        degree *= number
+    return degree
 
 
-def factor2n(n):
-    result = 1
-    for i in range(1, 2 * n + 1):
-        result *= i
-    # print('factor2n =', result)
-    return result
+def factorial(order):
+    if order == 0:
+        return 1
+    else:
+        factorial = 1
+        for i in range(1, 2 * order + 1):
+            factorial *= i
+        return factorial
 
 
-
-def row_member(x, n):
-    result = degree(n) * degree2x(x, n) / factor2n(n)
-    # print('result =', result)
-    return result
+def summing(number, order):
+    summing = sign(order) * degree(number, order) / factorial(order)
+    return summing
 
 
-x_dig = 5
-precision = 0.001
+number = float(input('Введите x: '))
+precision = float(input('Введите точность: '))
 
 summ = 0
-i = 0
-while True:
-    print('\ni =', i)
-    print('row member =', row_member(x_dig, i))
-    print('next member =', row_member(x_dig, i + 1))
-    if abs(row_member(x_dig, i) + abs(row_member(x_dig, i + 1) - abs(row_member(x_dig, i)))) > precision:
-        summ += row_member(x_dig, i)
-        print('summ =', summ)
-        i += 1
-    else:
-        break
+order = 0
+
+while abs(summing(number, order)) > precision:
+    summ += summing(number, order)
+    order += 1
+
+print('Сумма ряда =', summ)
