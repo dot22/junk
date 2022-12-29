@@ -1,32 +1,22 @@
-def number_sum(number_init):
-    sum_number = 0
-    # Если переменную цикла используем в коде, её необходимо назвать так, чтобы название отражало суть содержания.
-    #  "_" не отражает.
-    for _ in number_init:
-        sum_number += int(_)
-    return sum_number
+def sum_numbers(N):
+    summa = 0
+    while N > 0:
+        summa += N % 10
+        N //= 10
+    return summa
 
 
-def number_count(number_init):
-    count_number = 0
-    for _ in number_init:
-        count_number += 1
-    return count_number
+def count_numbers(N):
+    counts = 0
+    while N > 0:
+        counts += 1
+        N //= 10
+    return counts
 
 
-number = input('Введите целое положительное число: ')
-
-number_summ_dig = number_sum(number)
-number_count_dig = number_count(number)
-
-print('\nСумма цифр:', number_summ_dig)
-print('Кол-во цифр в числе:', number_count_dig)
-print('Разность суммы и кол-ва цифр:', number_summ_dig - number_count_dig)
-
-'''
-# , предлагаю попробовать сократить количество вызовов наших функций.
-#  т.к. каждый вызов функции это отдельное действие для python, которое создаёт нагрузку на код.
-#  Возможно мы сможем создать переменные с возвратом функций и использовать в работе их? =)
-'''
-
-# зачёт!
+number = 500
+summ = sum_numbers(number)
+print('Сумма цифр:', summ)
+count = count_numbers(number)
+print('Количество цифр в числе:', count)
+print('Разность суммы чисел и количества равна', summ - count)
