@@ -1,5 +1,5 @@
 OS info is 
-uname_result(system='Linux', node='thinkpad', release='5.4.0-91-generic', version='#102-Ubuntu SMP Fri Nov 5 16:31:28 UTC 2021', machine='x86_64', processor='x86_64')
+uname_result(system='Linux', node='mint-admin', release='5.15.0-56-generic', version='#62~20.04.1-Ubuntu SMP Tue Nov 22 21:24:20 UTC 2022', machine='x86_64')
 
-Python version is 3.8.10 (default, Nov 26 2021, 20:14:08) 
+Python version is 3.9.5 (default, Nov 23 2021, 15:27:38) 
 [GCC 9.3.0] ('64bit', 'ELF')
