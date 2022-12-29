@@ -1,0 +1,5 @@
+OS info is 
+uname_result(system='Linux', node='thinkpad', release='5.4.0-91-generic', version='#102-Ubuntu SMP Fri Nov 5 16:31:28 UTC 2021', machine='x86_64', processor='x86_64')
+
+Python version is 3.8.10 (default, Nov 26 2021, 20:14:08) 
+[GCC 9.3.0] ('64bit', 'ELF')
