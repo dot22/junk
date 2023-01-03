@@ -1,21 +1,16 @@
 text = input('Введите строку: ')
-new_text = ''
+sym_number = int(input('Номер символа: '))
 
 text_list = list(text)
-new_text_list = []
-
 count = 0
 
-for i in text_list:
-    if i != ':':
-        new_text_list.append(i)
-    else:
-        count += 1
-        new_text_list.append(';')
+print()
+print('Символ слева:', text_list[sym_number - 2])
+print('Символ справа:', text_list[sym_number])
 
-for j in new_text_list:
-    new_text += j
-
-print('Исправленная строка:', new_text)
-print('Количество замен:', count)
-
+if text_list[sym_number - 2] == text_list[sym_number - 1] == text_list[sym_number]:
+    print('\nЕсть еще два таких символа')
+elif text_list[sym_number - 2] == text_list[sym_number - 1] or text_list[sym_number - 1] == text_list[sym_number]:
+    print('\nЕсть ровно один такой же символ')
+else:
+    print('\nТаких же символов нет')
