@@ -1,19 +1,23 @@
-nums_count = int(input('Количество чисел в списке: '))
-nums_list = []
+dogs_count = int(input('Количество собак: '))
+dogs_list = []
 
-for i_num in range(nums_count):
-    print('Введите', i_num + 1, 'число:', end=' ')
-    nums_list.append(int(input('')))
+for i_dog in range(dogs_count):
+    print('Рейтинг собаки', i_dog + 1, '-', end=' ')
+    dogs_list.append(int(input('')))
 
-# print(nums_list)
+print('\nНеверный рейтинг собак:')
+print(dogs_list)
 
-divider = int(input('Введите делитель: '))
+min_dog = 0
+max_dog = 0
 
-index_sum = 0
+for i_dog in range(dogs_count):
+    if dogs_list[min_dog] > dogs_list[i_dog]:
+        min_dog = i_dog
+    if dogs_list[max_dog] < dogs_list[i_dog]:
+        max_dog = i_dog
 
-for i_num in range(nums_count):
-    if nums_list[i_num] % divider == 0:
-        print('Индекс числа ', nums_list[i_num], ': ', i_num, sep='')
-        index_sum += i_num
-
-print('Сумма индексов:', index_sum)
+# print(min_dog, max_dog)
+dogs_list[min_dog], dogs_list[max_dog] = dogs_list[max_dog], dogs_list[min_dog]
+print('\nВерный рейтинг собак:')
+print(dogs_list)
