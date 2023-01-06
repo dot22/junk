@@ -1,10 +1,14 @@
-main = [1, 0, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1]
-first_company = [0, 0, 0]
-second_company = [1, 0, 0, 1, 1]
-third_company = [1, 1, 1, 0, 1]
+# string_1 = 'Привет!'
+# string_2 = 'Как дела? Что делаешь?'
+string_1 = 'Хм!!'
+string_2 = '?'
 
-main.extend(first_company)
-main.extend(second_company)
-main.extend(third_company)
-print('\nОбщий список задач:', main)
-print('Количество невыполненных задача:', main.count(0))
+print('Первое сообщение:', string_1)
+print('Второе сообщение:', string_2)
+
+if string_1.count('!') + string_1.count('?') > string_2.count('!') + string_2.count('?'):
+    print(string_1 + string_2)
+elif string_1.count('!') + string_1.count('?') < string_2.count('!') + string_2.count('?'):
+    print(string_2 + string_1, sep=' ')
+else:
+    print('Ой!')
