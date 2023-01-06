@@ -1,16 +1,16 @@
-# members = int(input('Общее количество участников: '))
-# command = int(input('Количество человек в команде: '))
+goods = [["яблоки", 50], ["апельсины", 190], ["груши", 100], ["нектарины", 200], ["бананы", 77]]
 
-members = 12
-command = 5
-command_list = []
-start = 1
+new_fruit = 'абрикосы'
+price = 150
 
-if members % command == 0:
-    for i in range(members // command):
-        command_list.append(list(range(start, start + command)))
-        start += command
-    print('Общий список участников:', command_list)
-else:
-    print(members, 'участников невозможно поделить на команды по', command, 'человек')
+print('Текущий ассортимент:', goods)
+print('\nНовый фрукт:', new_fruit)
+print('Цена:', price)
+
+goods.append([new_fruit, price])
+print('\nНовый ассортимент:', goods)
+
+for i_good in goods:
+    i_good[1] += i_good[1] * 8 / 100
+print('\nНовый ассортимент с увеличенной ценой:', goods)
 
