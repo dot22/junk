@@ -1,22 +1,6 @@
-pack = []
-decode = []
-bad_packs = 0
+matrix = [[1, 2 ,3], [4, 5, 6], [7, 8, 9]]
 
-pack_amt = int(input('Количество пакетов: '))
-
-for i_pack_num in range(pack_amt):
-    print('\nПакет номер', i_pack_num + 1)
-    for i_bit in range(4):
-        print(i_bit + 1, 'бит:', end=' ')
-        num = int(input())
-        pack.append(num)
-    if pack.count(-1) <= 1:
-        decode.extend(pack)
-    else:
-        print('Много ошибок в пакете.')
-        bad_packs += 1
-    pack = []
-
-print('\nПолученное сообщение:', decode)
-print('Количество ошибок в сообщении', decode.count(-1))
-print('Количество потерянных пакетов:', bad_packs)
+for row in matrix:
+    for col in row:
+        print(col, end=' ')
+    print()
