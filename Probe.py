@@ -1,32 +1,22 @@
-films = [
-    'Крепкий орешек', 'Назад в будущее', 'Таксист',
-    'Леон', 'Богемская рапсодия', 'Город грехов',
-    'Мементо', 'Отступники', 'Деревня',
-    'Проклятый остров', 'Начало', 'Матрица'
-]
+pack = []
+decode = []
+bad_packs = 0
 
-personal_top = []
-while True:
-    print('Ваш текущий топ фильмов:', personal_top)
-    film = input('Название фильма: ')
-    if film not in films:
-        print('Такого фильма нет в фильмотеке')
+pack_amt = int(input('Количество пакетов: '))
+
+for i_pack_num in range(pack_amt):
+    print('\nПакет номер', i_pack_num + 1)
+    for i_bit in range(4):
+        print(i_bit + 1, 'бит:', end=' ')
+        num = int(input())
+        pack.append(num)
+    if pack.count(-1) <= 1:
+        decode.extend(pack)
     else:
-        print('Команды: добавить, вставить, удалить')
-        action = input('Введите команду: ')
-        if action == 'добавить':
-            if film in personal_top:
-                print('Этот фильм уже есть в вашем списке.')
-            else:
-                personal_top.append(film)
-        elif action == 'вставить':
-            if film in personal_top:
-                print('Этот фильм уже есть в вашем списке.')
-            else:
-                position = int(input('Введите позицию: '))
-                personal_top.insert(position - 1, film)
-        elif action == 'удалить':
-            if film not in personal_top:
-                print('Такого фильма нет в вашем списке')
-            else:
-                personal_top.remove(film)
+        print('Много ошибок в пакете.')
+        bad_packs += 1
+    pack = []
+
+print('\nПолученное сообщение:', decode)
+print('Количество ошибок в сообщении', decode.count(-1))
+print('Количество потерянных пакетов:', bad_packs)
