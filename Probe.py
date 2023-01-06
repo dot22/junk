@@ -13,3 +13,4 @@ if members % command == 0:
     print('Общий список участников:', command_list)
 else:
     print(members, 'участников невозможно поделить на команды по', command, 'человек')
+
