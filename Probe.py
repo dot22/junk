@@ -1,15 +1,19 @@
-shop = [['каретка', 1200], ['шатун', 1000], ['седло', 300], ['педаль', 100],
-        ['седло', 1500], ['рама', 12000], ['обод', 2000], ['шатун', 200], ['седло', 2700]]
+guests = ['Петя', 'Ваня', 'Саша', 'Лиза', 'Катя']
 
-detail = 'седло'
-amount = 0
-cost = 0
-
-for i_detail in shop:
-        if i_detail[0] == detail:
-                amount += 1
-                cost += i_detail[1]
-
-print('Название детали:', detail)
-print('Количество деталей:', amount)
-print('Общая стоимость:', cost)
+while True:
+    print('Сейчас на вечеринке', len(guests), 'человек:', guests)
+    question = input('Гость пришел или ушел? ')
+    if question == 'пора спать':
+        print('\nВечеринка закончилась, все легли спать.')
+        break
+    elif question == 'пришел':
+        name = input('Имя гостя:')
+        if len(guests) >= 6:
+            print('Прости, ', name, ', но мест нет.', sep='')
+        else:
+            print('Привет,', name)
+            guests.append(name)
+    else:
+        name = input('Имя гостя: ')
+        print('Пока,', name)
+        guests.remove(name)
