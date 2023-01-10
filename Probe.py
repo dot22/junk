@@ -1,13 +1,15 @@
-first_list = [1, 2, 3]
-print('Первый список:', first_list)
-second_list = [2, 4, 6, 3, 3, 2, 1]
-print('Второй список', second_list)
+rols = [42, 41, 40, 39]
+foots = [42, 42, 41, 41]
 
-first_list.extend(second_list)
-print('Расширенный первый список:', first_list)
+count = 0
 
-for i in first_list:
-    for j in range(first_list.count(i) - 1):
-        first_list.remove(i)
+rols.sort(reverse=True)
+foots.sort(reverse=True)
 
-print(first_list)
+for i_foot in foots:
+    for i_rol in rols:
+        if i_foot <= i_rol:
+            rols.remove(i_rol)
+            count += 1
+
+print(count)
